@@ -1,0 +1,26 @@
+.development__controls._services {
+	margin: 30px 0 30px -10px;
+	justify-content: start;
+}
+
+.cases-slider._services .cases-slider__item {
+	width: 1.25%;
+}
+
+@media screen and (max-width: 1280px) {
+	.cases-slider._services .cases-slider__item {
+		width: calc(5% / 3);
+	}
+}
+
+@media screen and (max-width: 920px) {
+	.cases-slider._services .cases-slider__item {
+		width: 2.5%;
+	}
+}
+
+@media screen and (max-width: 650px) {
+	.cases-slider._services .cases-slider__item {
+		width: 5%;
+	}
+}

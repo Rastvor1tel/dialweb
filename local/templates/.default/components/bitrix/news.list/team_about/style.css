@@ -1,0 +1,46 @@
+.about-team__contols {
+	margin: 20px 0 0 -10px;	
+}
+
+.about-team__slider {
+	margin-top: -40px;
+	width: 640px;
+	overflow: hidden;
+}
+.about-team__wrap {
+	left: 0;
+	display: flex;
+	width: 9999px;
+}
+.about-team__person {
+	margin-right: 20px;
+	width: 310px;
+}
+
+@media screen and (max-width: 1500px) {
+	.about-team__slider {
+		margin-top: 20px;
+		width: 100%;
+	}
+	.about-team__slider:after {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		width: 25px;
+		background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.about-team__slider:after {
+		display: none;
+	}
+	.about-team__wrap {
+		width: 2500%;
+	}
+	.about-team__person {
+		width: 4%;
+	}
+}

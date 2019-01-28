@@ -1,0 +1,16 @@
+.site-case .site-case__adaptive-desktop {
+	top: 4.7%;
+	width: 77.4%;
+}
+
+.site-case .site-case__adaptive-tablet {
+	bottom: 8.6%;
+	width: 23.5%;
+}
+
+.site-case .site-case__adaptive-mobile {
+	right: 2.3%;
+	bottom: 5.3%;
+	width: 13.2%;
+	height: 33.3%;
+}

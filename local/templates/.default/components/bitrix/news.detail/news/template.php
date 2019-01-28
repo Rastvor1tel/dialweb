@@ -1,0 +1,46 @@
+<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
+$this->setFrameMode(true);
+$shareUrl = urlencode('https://' . $_SERVER['SERVER_NAME'] . $arResult["DETAIL_PAGE_URL"]);
+?>
+<div class="blog-inner">
+	<h1 class="blog-inner__title"><?=$arResult["NAME"]?></h1>
+	<div class="blog-inner__info">
+		<div class="blog-inner__head">
+			<div class="blog-inner__date"><?=$arResult["DISPLAY_ACTIVE_FROM"]?></div>
+			<div class="blog-inner__views"><?=$arResult["SHOW_COUNTER"]?></div>
+		</div>
+		<div class="head-socials _blog">
+			<div class="head-socials__text">Поделиться:</div>
+			<div class="head-socials__wrap">
+				<a class="head-socials__item social-button" href="https://vk.com/share.php?url=<?=$shareUrl?>" target="_blank">
+					<svg class="social-button__icon">
+						<use xlink:href="<?=TEMPLATE_PATH?>/img/icons.svg#vk"></use>
+					</svg>
+				</a>
+				<a class="head-socials__item social-button" href="https://www.facebook.com/sharer.php?u=<?=$shareUrl?>" target="_blank">
+					<svg class="social-button__icon">
+						<use xlink:href="<?=TEMPLATE_PATH?>/img/icons.svg#facebook"></use>
+					</svg>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="blog-inner__wrap">
+		<div class="blog-inner__content">
+			<?=$arResult["DETAIL_TEXT"]?>
+			<?if (!empty($arResult["DETAIL_PICTURE"])):?>
+				<p style="text-align:center;"><img src="<?=$arResult["DETAIL_PICTURE"]["SRC"]?>" alt="<?=$arResult["DETAIL_PICTURE"]["ALT"]?>" title="<?=$arResult["DETAIL_PICTURE"]["TITLE"]?>"></p>
+			<?endif?>
+		</div>
+		<div class="blog-inner__side">
+			<?$APPLICATION->IncludeComponent("bitrix:news.list", "blog-sidebar", array(
+				"IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
+				"IBLOCK_ID" => $arParams["IBLOCK_ID"],
+				"NEWS_COUNT" => "4",
+				"SET_TITLE" => "N",
+				"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+				"SORT_BY1" => "RAND",
+			));?>
+		</div>
+	</div>
+</div>

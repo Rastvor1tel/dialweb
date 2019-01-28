@@ -1,0 +1,28 @@
+.tariff__slider {
+	overflow: hidden;
+}
+.tariff__slider .tariff__wrap {
+	width: 666.7%;
+}
+.tariff__slider .tariff__item {
+	width: 5%;
+}
+@media screen and (max-width: 1024px) {
+	.tariff__slider .tariff__item {
+		width: 7.5%;
+	}
+}
+@media screen and (max-width: 768px) {
+	.tariff__slider .tariff__item {
+		width: 15%;
+	}
+}
+.tariff__slider .tariff__number::before {
+	content: attr(data-number);
+}
+
+.tariff__contols {
+	position: absolute;
+	margin-top: -49px;
+	right: -10px;
+}
