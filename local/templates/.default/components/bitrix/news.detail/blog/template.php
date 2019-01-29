@@ -10,7 +10,7 @@ $shareUrl = urlencode('https://' . $_SERVER['SERVER_NAME'] . $arResult["DETAIL_P
 			<div class="blog-inner__date"><?=$arResult["DISPLAY_ACTIVE_FROM"]?></div>
 			<div class="blog-inner__views"><?=$arResult["SHOW_COUNTER"]?></div>
 		</div>
-			<div class="head-socials _blog">
+        <?/*<div class="head-socials _blog">
 			<div class="head-socials__text">Поделиться:</div>
 			<div class="head-socials__wrap">
 				<a class="head-socials__item social-button" href="https://vk.com/share.php?url=<?=$shareUrl?>" target="_blank">
@@ -24,11 +24,36 @@ $shareUrl = urlencode('https://' . $_SERVER['SERVER_NAME'] . $arResult["DETAIL_P
 					</svg>
 				</a>
 			</div>
-		</div>
+		</div>*/?>
 	</div>
 	<div class="blog-inner__wrap">
 		<div class="blog-inner__content">
 			<?=$arResult["DETAIL_TEXT"]?>
+            <div class="blog-inner__info _bottom">
+                <div class="head-socials _blog">
+                    <div class="head-socials__text">Поделиться:</div>
+                    <div class="head-socials__wrap">
+                        <a class="head-socials__item social-button" href="https://vk.com/share.php?url=<?=$shareUrl?>" target="_blank">
+                            <svg class="social-button__icon">
+                                <use xlink:href="<?=TEMPLATE_PATH?>/img/icons.svg#vk"></use>
+                            </svg>
+                        </a>
+                        <a class="head-socials__item social-button" href="https://www.facebook.com/sharer.php?u=<?=$shareUrl?>" target="_blank">
+                            <svg class="social-button__icon">
+                                <use xlink:href="<?=TEMPLATE_PATH?>/img/icons.svg#facebook"></use>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <?
+            $APPLICATION->IncludeComponent("bitrix:sender.subscribe", "light", array(
+                "SET_TITLE" => "N",
+                "AJAX_MODE" => "N",
+                "AJAX_OPTION_JUMP" => "N",
+                "AJAX_OPTION_HISTORY" => "N",
+            ));
+            ?>
 		</div>
 		<div class="blog-inner__side">
 			<?if (!empty($arResult["AUTHOR"])):
@@ -54,19 +79,4 @@ $shareUrl = urlencode('https://' . $_SERVER['SERVER_NAME'] . $arResult["DETAIL_P
 	</div>
 
 
-<!-- подписка для блогов -->
-	<div class="subscribe__blog">
-		<?/*$APPLICATION->IncludeComponent("asd:subscribe.quick.form", "subscribe", Array(
-			"FORMAT" => "html",	// Формат подписки
-				"INC_JQUERY" => "N",	// Подключить jQuery
-				"NOT_CONFIRM" => "Y",	// Подписывать без подтверждения
-				"RUBRICS" => array(	// Подписывать на рубрики
-					0 => "4",
-				),
-					"SHOW_RUBRICS" => "N",	// Показывать рубрики
-				),
-			false
-		);*/?>
-	</div>
-	
 </div>

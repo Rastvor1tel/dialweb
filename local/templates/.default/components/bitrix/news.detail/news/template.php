@@ -9,7 +9,7 @@ $shareUrl = urlencode('https://' . $_SERVER['SERVER_NAME'] . $arResult["DETAIL_P
 			<div class="blog-inner__date"><?=$arResult["DISPLAY_ACTIVE_FROM"]?></div>
 			<div class="blog-inner__views"><?=$arResult["SHOW_COUNTER"]?></div>
 		</div>
-		<div class="head-socials _blog">
+		<?/*<div class="head-socials _blog">
 			<div class="head-socials__text">Поделиться:</div>
 			<div class="head-socials__wrap">
 				<a class="head-socials__item social-button" href="https://vk.com/share.php?url=<?=$shareUrl?>" target="_blank">
@@ -23,7 +23,7 @@ $shareUrl = urlencode('https://' . $_SERVER['SERVER_NAME'] . $arResult["DETAIL_P
 					</svg>
 				</a>
 			</div>
-		</div>
+		</div>*/?>
 	</div>
 	<div class="blog-inner__wrap">
 		<div class="blog-inner__content">
@@ -31,6 +31,31 @@ $shareUrl = urlencode('https://' . $_SERVER['SERVER_NAME'] . $arResult["DETAIL_P
 			<?if (!empty($arResult["DETAIL_PICTURE"])):?>
 				<p style="text-align:center;"><img src="<?=$arResult["DETAIL_PICTURE"]["SRC"]?>" alt="<?=$arResult["DETAIL_PICTURE"]["ALT"]?>" title="<?=$arResult["DETAIL_PICTURE"]["TITLE"]?>"></p>
 			<?endif?>
+            <div class="blog-inner__info _bottom">
+                <div class="head-socials _blog">
+                    <div class="head-socials__text">Поделиться:</div>
+                    <div class="head-socials__wrap">
+                        <a class="head-socials__item social-button" href="https://vk.com/share.php?url=<?=$shareUrl?>" target="_blank">
+                            <svg class="social-button__icon">
+                                <use xlink:href="<?=TEMPLATE_PATH?>/img/icons.svg#vk"></use>
+                            </svg>
+                        </a>
+                        <a class="head-socials__item social-button" href="https://www.facebook.com/sharer.php?u=<?=$shareUrl?>" target="_blank">
+                            <svg class="social-button__icon">
+                                <use xlink:href="<?=TEMPLATE_PATH?>/img/icons.svg#facebook"></use>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <?
+            $APPLICATION->IncludeComponent("bitrix:sender.subscribe", "light", array(
+                "SET_TITLE" => "N",
+                "AJAX_MODE" => "N",
+                "AJAX_OPTION_JUMP" => "N",
+                "AJAX_OPTION_HISTORY" => "N",
+            ));
+            ?>
 		</div>
 		<div class="blog-inner__side">
 			<?$APPLICATION->IncludeComponent("bitrix:news.list", "blog-sidebar", array(
@@ -43,4 +68,5 @@ $shareUrl = urlencode('https://' . $_SERVER['SERVER_NAME'] . $arResult["DETAIL_P
 			));?>
 		</div>
 	</div>
+
 </div>
