@@ -1,0 +1,84 @@
+
+.grade-item {
+	display: flex;
+	align-content: stretch;
+
+}
+
+.grade-item__image {
+	margin-right: 25px;
+	/*flex-grow: 0;*/
+}
+
+
+.grade-item__wrapper {
+	flex-grow: 1;
+}
+
+.grade-item__content {
+	margin-bottom: 30px;
+	padding-bottom: 30px;
+}
+
+.grade-item__desc {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	width: 100%;
+	margin-left: 80px;
+	font-size: 15px;
+	line-height: 22px;
+	color: #0f0f0f;
+}
+
+.grade-item__desc p {
+	margin: 0;
+}
+
+.grade-item__desc b {
+	text-decoration: underline;
+	font-weight: 400;
+}
+
+.grade-item__desc:before {
+	content: '';
+	position: absolute;
+	left: -66px;
+	bottom: 4px;
+	display: block;
+	width: 30px;
+	height: 26px;
+	background-image: url(/local/templates/dial/template/img/left-quote.png);
+	background-repeat: no-repeat;
+}
+
+.grade-item__desc:after {
+	content: '';
+	position: absolute;
+	right: -66px;
+	top: 45px;
+	display: block;
+	width: 30px;
+	height: 26px;
+	background-image: url(/local/templates/dial/template/img/right-quote.png);
+	background-repeat: no-repeat;
+}
+
+.grade-item__title {
+	display: block;
+	margin-bottom: 3px;
+	font-size: 18px;
+	color: #000;
+}
+
+.grade-item__subtitle {
+	display: block;
+	margin-bottom: 11px;
+	font-size: 14px;
+	color: #7ddfee;
+}
+
+.grade-item-rating {
+	margin-top: 10px;
+	text-align: center;
+}

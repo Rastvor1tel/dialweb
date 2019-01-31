@@ -16,6 +16,9 @@ $APPLICATION->AddHeadScript(TEMPLATE_PATH . '/libs/svg4everybody.min.js');
 $APPLICATION->AddHeadScript(TEMPLATE_PATH . '/libs/fancybox/jquery.fancybox.min.js');
 $APPLICATION->AddHeadScript(TEMPLATE_PATH . '/js/script.js');
 $APPLICATION->ShowHead();
+/*use \Bitrix\Main\Service\GeoIp;
+$ipAddress = GeoIp\Manager::getRealIp();
+$resultGeo = GeoIp\Manager::getDataResult($ipAddress, "ru");*/
 ?>
 <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
 <meta name="theme-color" content="#fe9023">

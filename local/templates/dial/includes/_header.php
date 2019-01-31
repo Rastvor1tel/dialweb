@@ -15,10 +15,18 @@
 			</div>
 			<div class="header__phone">
 				<?
-				if (SITE_ID == "s3")
-					echo '<a class="header__phone-link zphone" href="tel:+4842202484" id="call2">+7 (4842) 20 24 84</a>';
-				elseif (SITE_ID == "s1")
-					echo '<a class="header__phone-link zphone" href="tel:+74872250419" id="call2">+7 (4872) 25 04 19</a>';
+				if (SITE_ID == "s3") {
+                    echo '<a class="header__phone-link zphone" href="tel:+4842202484" id="call2">+7 (4842) 20 24 84</a>';
+                } elseif (SITE_ID == "s1") {
+                    $city = \Bitrix\Main\Service\GeoIp\Manager::getCityName();
+                    if ($city == 'Moscow') {
+                        echo '<a class="header__phone-link zphone" href="tel:+74959663898" id="call2">+7 (495) 966-38-98</a>';
+                    } elseif ($city == 'Kaluga'){
+                        echo '<a class="header__phone-link zphone" href="tel:+74842202484" id="call2">+7 (4842) 20 24 84</a>';
+                    } else {
+                        echo '<a class="header__phone-link zphone" href="tel:+74872250419" id="call2">+7 (4872) 25 04 19</a>';
+                    }
+                }
 				?>
 				<button type="button" class="header__phone-link js-popup-button" data-popup="js-popup-callback">Заказать звонок</button>
 			</div>
@@ -106,10 +114,15 @@
             <?
             $rsSite = CSite::GetList($by="sort", $order="desc", []);
             while ($arSite = $rsSite->Fetch()) {
-                if ($arSite['LID'] != SITE_ID)
-                    echo '<div class="city-select__item"><a href="https://'.$arSite['SERVER_NAME'].'" selected disabled><span></span><div>'.$arSite['NAME'].'</div></a></div>';
-                else
-                    echo '<div class="city-select__item active"><a href="https://'.$arSite['SERVER_NAME'].'" selected disabled><span></span><div>'.$arSite['NAME'].'</div></a></div>';
+                /*global $USER;
+                if ($USER->IsAdmin()) {
+                    echo $arSite['LID'];
+                }*/
+                if ($arSite['LID'] != SITE_ID) {
+                    echo '<div class="city-select__item"><a href="https://' . $arSite['SERVER_NAME'] . '" selected disabled><span></span><div>' . $arSite['NAME'] . '</div></a></div>';
+                } else {
+                    echo '<div class="city-select__item active"><a href="https://' . $arSite['SERVER_NAME'] . '" selected disabled><span></span><div>' . $arSite['NAME'] . '</div></a></div>';
+                }
             }
             ?>
         </div>

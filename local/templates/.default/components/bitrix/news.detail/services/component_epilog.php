@@ -37,7 +37,7 @@ $APPLICATION->SetPageProperty('feedback_title', $arResult['PROPERTIES']['FEEDBAC
                                 <div class="services-item__info"><?= $value ?></div>
                             </div>
                         </li>
-                    <?endforeach ?>
+                    <? endforeach ?>
                 </ul>
             </div>
         </div>
@@ -57,7 +57,7 @@ if (!empty($arResult['PROPERTIES']['TARIFF_SECTION']['VALUE'])): ?>
             "PROPERTY_CODE" => array("PRICE")
         )); ?>
     </div>
-<?endif ?>
+<? endif ?>
 <?
 if ($arResult['ID'] == 205):?>
     <div class="strategy">
@@ -65,14 +65,17 @@ if ($arResult['ID'] == 205):?>
         <p>Мы можем разработать индивидуальную стратегию по комплексной аналитике вашего бизнеса и анализу ваших
             подрядчиков.</p>
         <ol>
-            <li>Проанализируем полный путь вашего клиента от запроса в поисковой системе до оплаты товара в корзине.</li>
+            <li>Проанализируем полный путь вашего клиента от запроса в поисковой системе до оплаты товара в корзине.
+            </li>
             <li>Настроим сквозную аналитику для проектов любой сложности.</li>
             <li>Внедрим или настроим уже внедренную CRM для максимальной эффективности.</li>
             <li>Проведем корреляцию между вашими заявками и любыми онлайн/оффлайн каналами.</li>
         </ol>
-        <div class="button button_oragne strategy__button js-popup-button" data-popup="_personal">Получить персональное предложение!</div>
+        <div class="button button_oragne strategy__button js-popup-button" data-popup="_personal">Получить персональное
+            предложение!
+        </div>
     </div>
-<?endif; ?>
+<? endif; ?>
     <div class="page-title"><?= (!empty($arResult['PROPERTIES']['GET_TITLE']['VALUE']) ? $arResult['PROPERTIES']['GET_TITLE']['VALUE'] : 'Что вы получите работая с нами') ?></div>
     <div class="info _form">
         <div class="info__wrap-big">
@@ -85,7 +88,7 @@ if ($arResult['ID'] == 205):?>
                             <div class="info__list-name"><?= $arResult['PROPERTIES']['GET_LIST']['DESCRIPTION'][$key] ?></div>
                             <div class="info__list-text"><?= $value ?></div>
                         </div>
-                    <?endforeach ?>
+                    <? endforeach ?>
                 <? else: ?>
                     <div class="info__list-item">
                         <div class="info__list-name">Правильное Digital агентство</div>
@@ -112,7 +115,7 @@ if ($arResult['ID'] == 205):?>
                             качество и объем выполняемых работ.
                         </div>
                     </div>
-                <?endif ?>
+                <? endif ?>
             </div>
         </div>
         <div class="info__wrap-small">
@@ -145,7 +148,7 @@ if (!empty($arResult['PROPERTIES']['STEPS_SECTION']['VALUE'])): ?>
         "ADD_SECTIONS_CHAIN" => "N",
         "PROPERTY_CODE" => array("BUTTON_TITLE")
     )); ?>
-<?endif ?>
+<? endif ?>
 <?
 if (!empty($arResult['PROPERTIES']['CASES_SECTION']['VALUE'])) {
     if ($arResult['PROPERTIES']['CASES_SECTION']['VALUE'] == 23) {
@@ -169,4 +172,4 @@ if (!empty($arResult['PROPERTIES']['CASES_SECTION']['VALUE'])) {
             "PROPERTY_CODE" => array("TYPE")
         ));
     }
-}
+}?>

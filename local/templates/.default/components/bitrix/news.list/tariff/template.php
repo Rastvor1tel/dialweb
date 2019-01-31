@@ -16,7 +16,17 @@ $this->setFrameMode(true);
 		<div class="tariff__item" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
 			<div class="tariff__number" data-number="0<?=$key+1?>">Тариф</div>
 			<div class="tariff__info">
-				<div class="tariff__name"><?=$arItem["NAME"]?></div>
+				<?
+				if ($arItem['PROPERTIES']['LINK']['VALUE']) {
+					?>
+					<a href="<?=$arItem['PROPERTIES']['LINK']['VALUE'];?>" class="tariff__name"><?=$arItem["NAME"]?></a>
+					<?
+				} else {
+					?>
+					<div class="tariff__name"><?=$arItem["NAME"]?></div>
+					<?
+				}
+				?>
 				<div class="tariff__desc"><?=$arItem["PREVIEW_TEXT"]?></div>
 				<div class="tariff__price">
 					<?if (isset($arItem["PROPERTIES"]["PRICE"]["VALUE"]) && $arItem["PROPERTIES"]["PRICE"]["VALUE"] !=0):?>
@@ -47,3 +57,11 @@ $this->setFrameMode(true);
 <?if (count($arResult['ITEMS']) > 3):?>
 	</div>
 <?endif?>
+<?
+global $USER;
+if ($USER->IsAdmin()) {
+/*echo '<pre>';
+print_r($arResult['ITEMS']);
+echo '</pre>';*/
+}
+?>

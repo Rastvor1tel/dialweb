@@ -3,13 +3,13 @@
 	<div class="contacts-page" itemscope="" itemtype="http://schema.org/Organization">
 		<span itemprop="name" style="display: none;">DialWeb</span>
 		<div class="contacts-page__tabs tabs">
-			<button class="contacts-page__tab tabs__item button _active" type="button">Тула</button>
-			<button class="contacts-page__tab tabs__item button" type="button">Москва</button>
-			<button class="contacts-page__tab tabs__item button" type="button">Калуга</button>
+			<button class="contacts-page__tab tabs__item button<?if($city!='Moscow' && $city!='Kaluga'){?> _active<?}?>" type="button">Тула</button>
+			<button class="contacts-page__tab tabs__item button<?if($city=='Moscow'){?> _active<?}?>" type="button">Москва</button>
+			<button class="contacts-page__tab tabs__item button<?if($city=='Kaluga'){?> _active<?}?>" type="button">Калуга</button>
 		</div>
 		<div class="contacts-page__wrap">
 			<p><b>Единый номер:</b><br><a href="tel:+78007758343" class="contacts-page__phone" itemprop="telephone">8 800 775 83 43</a></p>
-			<div class="contacts-page__block js-contacts-tab _active">
+			<div class="contacts-page__block js-contacts-tab<?if($city!='Moscow' && $city!='Kaluga'){?> _active<?}?>">
 				<p>
 					<b>Телефон в Туле:</b>
 					<br>
@@ -26,12 +26,12 @@
 					<span itemprop="streetAddress">ул. 3-я Трубная, д.22, оф.2</span>
 				</p>
 			</div>
-			<div class="contacts-page__block js-contacts-tab">
+			<div class="contacts-page__block js-contacts-tab<?if($city=='Moscow'){?> _active<?}?>">
 				<p><b>Телефон в Москве:</b><br><a href="tel:+74959663898">+7 (495) 966-38-98</a><br><a href="tel:+79035385939">+7 (903) 538-59-39</a></p>
 				<p><b>Наш E-mail:</b><br><a href="mailto:salemsk@dialweb.ru">salemsk@dialweb.ru</a></p>
 				<p><b>Адрес в Москве:</b><br>ул. Угрешская, д.2, стр.31, оф.116</p>
 			</div>
-			<div class="contacts-page__block js-contacts-tab">
+			<div class="contacts-page__block js-contacts-tab<?if($city=='Kaluga'){?> _active<?}?>">
 				<p><b>Телефон в Калуге:</b><br><a href="tel:+74842202484">+7 (4842) 20-24-84</a><br><a href="tel:+79005752484">+7 (900) 575-24-84</a></p>
 				<p><b>Наш E-mail:</b><br><a href="mailto:mo@dialweb.ru">mo@dialweb.ru</a></p>
 				<p><b>Адрес в Калуге:</b><br>ул. Дзержинского, д.35, оф.11</p>

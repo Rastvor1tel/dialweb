@@ -83,7 +83,8 @@ if(CModule::IncludeModule("iblock"))
             $array_pages_iblock[] = array(
                 'NAME' => $ob['NAME'],
                 'URL' => $ob['SECTION_PAGE_URL'],
-                'LASTMOD' => $ob['TIMESTAMP_X']
+                'LASTMOD' => $ob['TIMESTAMP_X'],
+                'PRIORITY' => ($iblock_id == 9) ? '0.8' : '0.6'
             );
         }
         //Список элементов

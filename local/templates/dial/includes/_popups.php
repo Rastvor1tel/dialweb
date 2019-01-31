@@ -12,6 +12,19 @@
 	</div>
 	<button class="popup__close" type="button"></button>
 </div>
+<div class="popup js-popup-strategy">
+	<div class="feedback-form">
+		<div class="feedback-form__title">Заказать план</div>
+		<?$APPLICATION->IncludeComponent("bitrix:form.result.new", "strategy", array(
+			"WEB_FORM_ID" => "5",
+			"LIST_URL" => "",
+			"AJAX_MODE" => "Y",
+			"AJAX_OPTION_JUMP" => "N",
+			"AJAX_OPTION_HISTORY" => "N",
+		));?>
+	</div>
+	<button class="popup__close" type="button"></button>
+</div>
 <div class="popup _quit js-popup-quit">
 	<form class="feedback-form _blog" action="#" method="post">
 		<div class="feedback-form__title">Уже уходите? :(</div>

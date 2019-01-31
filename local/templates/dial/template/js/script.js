@@ -205,7 +205,7 @@ $(function(){
 
 	/* -------------------------Popups------------------------- */
 
-	$('.js-popup-button, .contacts__menu-link, .blog_popup, .zakaz').click(function(){
+	$('.js-popup-button, .contacts__menu-link, .blog_popup, .zakaz, .order__strategy-plane').click(function(){
 		var popupData = $(this).data('popup');
 		$('.' + popupData).fadeIn();
 		$('.overlay').fadeIn().css('z-index', 20);
@@ -245,6 +245,7 @@ $(function(){
 		$('.overlay').fadeIn().css('z-index', 20);
 		$('body').addClass('_overflow');		
 	}
+	
 	
 })
 
