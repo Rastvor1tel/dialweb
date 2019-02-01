@@ -10,7 +10,7 @@ class Helpers
 	}
 }
 
-use \Bitrix\Main\Service\GeoIp;
+/*use \Bitrix\Main\Service\GeoIp;
 AddEventHandler('main', 'OnEpilog', array('CMainHandlers', 'OnEpilogHandler'));
 class CMainHandlers {
     public static function OnEpilogHandler() {
@@ -26,4 +26,4 @@ class CMainHandlers {
             $GLOBALS['APPLICATION']->SetPageProperty('description', $description2);
         }
     }
-}
+}*/

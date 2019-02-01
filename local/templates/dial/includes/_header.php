@@ -14,20 +14,7 @@
 				<a class="header__phone-link" href="tel:+78007558343" id="call1">8 (800) 775 83 43</a>
 			</div>
 			<div class="header__phone">
-				<?
-				if (SITE_ID == "s3") {
-                    echo '<a class="header__phone-link zphone" href="tel:+4842202484" id="call2">+7 (4842) 20 24 84</a>';
-                } elseif (SITE_ID == "s1") {
-                    $city = \Bitrix\Main\Service\GeoIp\Manager::getCityName();
-                    if ($city == 'Moscow') {
-                        echo '<a class="header__phone-link zphone" href="tel:+74959663898" id="call2">+7 (495) 966-38-98</a>';
-                    } elseif ($city == 'Kaluga'){
-                        echo '<a class="header__phone-link zphone" href="tel:+74842202484" id="call2">+7 (4842) 20 24 84</a>';
-                    } else {
-                        echo '<a class="header__phone-link zphone" href="tel:+74872250419" id="call2">+7 (4872) 25 04 19</a>';
-                    }
-                }
-				?>
+				<?$APPLICATION->IncludeComponent('dial:city.show', '', ['FIELD' => 'PROPERTY_PHONE', 'CLASS' => 'header__phone-link zphone']);?>
 				<button type="button" class="header__phone-link js-popup-button" data-popup="js-popup-callback">Заказать звонок</button>
 			</div>
             <div class="header__city">
@@ -36,10 +23,7 @@
                     <path d="M245.791,73.291c-51.005,0-92.5,41.496-92.5,92.5s41.495,92.5,92.5,92.5s92.5-41.496,92.5-92.5    S296.796,73.291,245.791,73.291z M245.791,233.291c-37.22,0-67.5-30.28-67.5-67.5s30.28-67.5,67.5-67.5    c37.221,0,67.5,30.28,67.5,67.5S283.012,233.291,245.791,233.291z" fill="#fe9023"/>
                 </svg>
                 <div class="header__city-select">
-                    <?
-                    $curSite = CSite::GetList($by="sort", $order="desc", ["LID" => SITE_ID])->Fetch();
-                    echo $curSite['NAME'];
-                    ?>
+                    <?$APPLICATION->IncludeComponent('dial:city.show', '', ['FIELD' => 'NAME']);?>
                 </div>
             </div>
 		</div>
@@ -106,25 +90,4 @@
 		Презентация
 	</a>
 </div>
-<div class="city-select">
-    <div class="city-select__close"></div>
-    <div class="container-outer">
-        <div class="city-select__title">Выберите город:</div>
-        <div class="city-select__items">
-            <?
-            $rsSite = CSite::GetList($by="sort", $order="desc", []);
-            while ($arSite = $rsSite->Fetch()) {
-                /*global $USER;
-                if ($USER->IsAdmin()) {
-                    echo $arSite['LID'];
-                }*/
-                if ($arSite['LID'] != SITE_ID) {
-                    echo '<div class="city-select__item"><a href="https://' . $arSite['SERVER_NAME'] . '" selected disabled><span></span><div>' . $arSite['NAME'] . '</div></a></div>';
-                } else {
-                    echo '<div class="city-select__item active"><a href="https://' . $arSite['SERVER_NAME'] . '" selected disabled><span></span><div>' . $arSite['NAME'] . '</div></a></div>';
-                }
-            }
-            ?>
-        </div>
-    </div>
-</div>
+<?$APPLICATION->IncludeComponent('dial:city.change', '', ['ADDITIONAL_CITY' => [0 => 'RU-MOW']]);?>
