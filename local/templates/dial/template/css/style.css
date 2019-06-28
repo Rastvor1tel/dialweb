@@ -9606,6 +9606,8 @@ a.black_friday {
     font-weight: 400;
     padding-left: 42px;
     margin-bottom: 20px;
+    font-weight: 300;
+    letter-spacing: 0.22px;
 }
 
 .feature-list__item::before {
@@ -9894,10 +9896,43 @@ a.black_friday {
     width: 100%;
 }
 @media screen and (max-width: 500px){
+table.seminarTable td{
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+
     .subscribe__blog-image {
         display: none;
     }
     .subscribe__blog-wrap {
         width: 100%;
     }
+}
+.styled__description{
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 30px;
+    letter-spacing: 0.22px;
+}
+.feature-list__item_active {
+    color: black;
+    font-weight: 700;
+}
+.tools__titles .feature-list__item{
+    cursor: pointer;
+}
+
+
+
+table.seminarTable{margin: 30px auto;
+    width: 100%;}
+
+
+table.seminarTable td{padding: 10px;
+    background: rgba(202, 202, 202, 0.5);}
+
+table.seminarTable tr:nth-child(2n) td{
+   background: rgba(202, 202, 202, 0.3);  
 }

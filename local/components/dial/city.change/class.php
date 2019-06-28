@@ -14,7 +14,7 @@ Class GeoCityChange extends GeoCity {
         $result = [];
         $count = 0;
 
-        $cityList = GeoCity::getCityGeoDataList([],['NAME', 'CODE']);
+        $cityList = GeoCity::getCityGeoDataList(['!PROPERTY_HIDE_VALUE' => 'Y'],['NAME', 'CODE']);
 
         foreach ($cityList as $cityItem) {
             $site = CSite::GetList($by="sort", $order="desc", ['LID' => $cityItem['PROPERTY_SITE_ID_VALUE']])->Fetch();

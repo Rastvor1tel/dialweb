@@ -1,4 +1,10 @@
-<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
+<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
+use Bitrix\Main\Localization\Loc;
+Loc::loadMessages(__FILE__);
+/**
+ * @var $APPLICATION CMain
+ */
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -11,5 +17,7 @@
 	</header>
 	<main class="main _inner">
 		<div class="container-outer">
-			<?$APPLICATION->IncludeComponent("bitrix:breadcrumb","")?>
+            <?if($APPLICATION->GetDirProperty("HIDE_BREADCRUMB") !== "Y"):?>
+			    <?$APPLICATION->IncludeComponent("bitrix:breadcrumb","")?>
+            <?endif;?>
 			<div class="container-inner">

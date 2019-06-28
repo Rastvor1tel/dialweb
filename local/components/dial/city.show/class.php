@@ -11,7 +11,7 @@ Class GeoCityShow extends GeoCity {
     }
 
     public function getCityData() {
-        $cityCode = GeoCity::getCityCurrent();
+        $cityCode = ($this->arParams['CITY_CODE']) ? $this->arParams['CITY_CODE'] : GeoCity::getCityCurrent();
         $field = $this->arParams['FIELD'] ? $this->arParams['FIELD'] : 'PROPERTY_PHONE';
         $cityData = GeoCity::getCityGeoData(['CODE' => $cityCode], [$field]);
         if ($cityData[$field.'_VALUE'])

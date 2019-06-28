@@ -58,6 +58,7 @@ if (!empty($arResult['PROPERTIES']['TARIFF_SECTION']['VALUE'])): ?>
         )); ?>
     </div>
 <? endif ?>
+
 <?
 if ($arResult['ID'] == 205):?>
     <div class="strategy">
@@ -148,6 +149,22 @@ if (!empty($arResult['PROPERTIES']['STEPS_SECTION']['VALUE'])): ?>
         "ADD_SECTIONS_CHAIN" => "N",
         "PROPERTY_CODE" => array("BUTTON_TITLE")
     )); ?>
+<? endif ?>
+<?
+if (!empty($arResult['PROPERTIES']['STATIC_PAGES']['VALUE'])): ?>
+
+    <div class="page-title" id="static"><?= $arResult['PROPERTIES']['STATIC_PAGES_TITLE']['VALUE'] ?></div>
+    <?
+    $APPLICATION->IncludeComponent("bitrix:news.list", "static-links", array(
+        "IBLOCK_ID" => "15",
+        "PARENT_SECTION" => $arResult['PROPERTIES']['STATIC_PAGES']['VALUE'],
+        "NEWS_COUNT" => "10",
+        "SET_TITLE" => "N",
+        "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+        "ADD_SECTIONS_CHAIN" => "N",
+        "PROPERTY_CODE" => array("LINK")
+    )); ?>
+
 <? endif ?>
 <?
 if (!empty($arResult['PROPERTIES']['CASES_SECTION']['VALUE'])) {

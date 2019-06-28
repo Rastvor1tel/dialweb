@@ -1,11 +1,13 @@
-<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
+<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
+use Bitrix\Main\Localization\Loc;
+Loc::loadMessages(__FILE__);?>
 <div class="container-inner">
 	<div class="footer__wrap-inner">
 		<div class="footer__bottom">
 			<?$APPLICATION->IncludeComponent("bitrix:menu", "bottom", array("ROOT_MENU_TYPE" => "bottom", "MAX_LEVEL" => "1"));?>
 			<div class="footer__social">
 				<div class="footer__social-item">
-					<div class="footer__social-text">Мы в соцсетях:</div>
+					<div class="footer__social-text"><?=Loc::getMessage("FOOTER_SOCIAL");?></div>
 				</div>
 				<a class="footer__social-item" href="https://www.facebook.com/dialweb" target="_blank">
 					<div class="footer__social-text">Facebook</div>

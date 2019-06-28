@@ -5,6 +5,7 @@
 <title><?$APPLICATION->ShowTitle()?> - Digital Agency Dial</title>
 <?
 $APPLICATION->SetAdditionalCSS(TEMPLATE_PATH . '/css/normalize.css');
+$APPLICATION->SetAdditionalCSS(TEMPLATE_PATH . '/css/common.css');
 $APPLICATION->SetAdditionalCSS(TEMPLATE_PATH . '/css/style.css');
 $APPLICATION->SetAdditionalCSS(TEMPLATE_PATH . '/libs/fancybox/jquery.fancybox.min.css');
 if (SITE_TEMPLATE_ID != 'dial') {

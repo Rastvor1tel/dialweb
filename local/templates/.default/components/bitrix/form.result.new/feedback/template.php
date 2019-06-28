@@ -6,7 +6,7 @@
 	<?foreach ($arResult["QUESTIONS"] as $arQuestion):
 		$fieldname = "form_" . $arQuestion["STRUCTURE"][0]["FIELD_TYPE"] . "_" . $arQuestion["STRUCTURE"][0]["ID"];
 	?>
-		<?if ($arQuestion["STRUCTURE"][0]["FIELD_TYPE"] == 'text' && $arQuestion['CAPTION'] != 'roistat'):?>
+		<?if ($arQuestion["STRUCTURE"][0]["FIELD_TYPE"] == 'text'):?>
 			<label class="feedback-form__label input-label">
 				<input type="text" name="<?=$fieldname?>" value="<?=$arResult["arrVALUES"][$fieldname]?>" class="input-label__input text-input" <?if ($arQuestion["REQUIRED"] == "Y"):?>required<?endif?>>
 				<span class="input-label__placeholder js-placeholder"><?=$arQuestion["CAPTION"]?><?if ($arQuestion["REQUIRED"] == "Y"):?> *<?endif?></span>
@@ -15,17 +15,24 @@
 			<noscript>Для отправки сообщения включите JavaScript.</noscript>
 			<div class="antibot" data-id="<?=$arQuestion["STRUCTURE"][0]["ID"]?>"></div>
 		<?elseif ($arQuestion['CAPTION'] == 'roistat'):?>
-			<input type="hidden" 
-				name="<?=$fieldname?>" 
-				value="<?=array_key_exists('roistat_visit', $_COOKIE) ? $_COOKIE['roistat_visit'] : "неизвестно";?>"
-			>
+			<input type="hidden" name="<?=$fieldname?>" value="" data-roistat-field>
+        <?elseif ($arQuestion['CAPTION'] == 'type_form'):?>
+            <input type="hidden" name="<?=$fieldname?>" value="" data-type-form>
+		<?elseif ($arQuestion['CAPTION'] == 'Домен'):?>
+			<input type="hidden" name="<?=$fieldname?>" value="<?=$_SERVER['HTTP_HOST']?>">
+		<?elseif ($arQuestion['CAPTION'] == 'Город'):?>
+			<input type="hidden" name="<?=$fieldname?>" value="<?=GeoCity::getCityName();?>">
 		<?endif?>
 	<?endforeach?>
-	<div class="feedback-form__text">Нажимая кнопку "ОТПРАВИТЬ" я даю согласие на обработку персональных данных</div>
+	<div class="feedback-form__text">Нажимая кнопку "ОТПРАВИТЬ", я даю согласие на обработку персональных данных</div>
 	<input type="submit" name="web_form_submit" value="Отправить" class="feedback-form__submit button button_white-bg">
 	<?=$arResult["FORM_FOOTER"]?>
 </div>
 <script>
+    var formName = $('.feedback__head .feedback__title').text();
+    $('[data-type-form]').val(formName);
+
+
 	$('.antibot').each(function(){
 		$(this).html('<input type="hidden" name="form_url_'+$(this).data('id')+'" value="' + location.href + '">');
 	});

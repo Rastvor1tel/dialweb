@@ -26,13 +26,24 @@
 					<span itemprop="streetAddress">ул. 3-я Трубная, д.22, оф.2</span>
 				</p>
 			</div>
+
+            <?
+            if ($_SERVER['HTTP_HOST'] == 'kaluga.dialweb.ru') {
+                $roistat495Class = 'roistat-phone-kaluga495';
+                $roistat4842Class = ' roistat-phone-4842';
+            } else {
+                $roistat495Class = 'roistat-phone-495';
+                $roistat4842Class = 'roistat-phone-dialweb4842';
+            }
+            ?>
+
 			<div class="contacts-page__block js-contacts-tab<?if($city=='Moscow'){?> _active<?}?>">
-				<p><b>Телефон в Москве:</b><br><a href="tel:+74959663898">+7 (495) 966-38-98</a><br><a href="tel:+79035385939">+7 (903) 538-59-39</a></p>
+				<p><b>Телефон в Москве:</b><br><a href="tel:+74952666287" class="<? echo $roistat495Class; ?>">+7 (495) 266-62-87</a><br><a href="tel:+79035385939">+7 (903) 538-59-39</a></p>
 				<p><b>Наш E-mail:</b><br><a href="mailto:salemsk@dialweb.ru">salemsk@dialweb.ru</a></p>
 				<p><b>Адрес в Москве:</b><br>ул. Угрешская, д.2, стр.31, оф.116</p>
 			</div>
 			<div class="contacts-page__block js-contacts-tab<?if($city=='Kaluga'){?> _active<?}?>">
-				<p><b>Телефон в Калуге:</b><br><a href="tel:+74842202484">+7 (4842) 20-24-84</a><br><a href="tel:+79005752484">+7 (900) 575-24-84</a></p>
+				<p><b>Телефон в Калуге:</b><br><a href="tel:+74842202484" class="<? echo $roistat4842Class;?>">+7 (4842) 20-24-84</a><br><a href="tel:+79005752484">+7 (900) 575-24-84</a></p>
 				<p><b>Наш E-mail:</b><br><a href="mailto:mo@dialweb.ru">mo@dialweb.ru</a></p>
 				<p><b>Адрес в Калуге:</b><br>ул. Дзержинского, д.35, оф.11</p>
 			</div>
@@ -82,7 +93,7 @@ $(function(){
     });
 });
 
-function initMap() { 
+function initMap() {
 	contactsMap = new ymaps.Map("contacts-map", {
 		center: mapCenters[0],
 		zoom: 14

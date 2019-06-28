@@ -1,49 +1,50 @@
 <?
+use Bitrix\Main\Localization\Loc;
 $aMenuLinks = Array(
 	Array(
-		"Услуги", 
+        Loc::getMessage('SERVICE_PAGE'),
 		"/services/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
-		"Акции", 
+        Loc::getMessage('SALE_PAGE'),
 		"/sale/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
-		"Блог", 
+        Loc::getMessage('BLOG_PAGE'),
 		"/blog/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
-		"Новости", 
+        Loc::getMessage('NEWS_PAGE'),
 		"/news/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
-		"Академия", 
+        Loc::getMessage('ACADEMY_PAGE'),
 		"/academy/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
-		"О компании", 
+        Loc::getMessage('ABOUT_PAGE'),
 		"/about/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
-		"Контакты", 
+        Loc::getMessage('CONTACT_PAGE'),
 		"/contacts/", 
 		Array(), 
 		Array(), 

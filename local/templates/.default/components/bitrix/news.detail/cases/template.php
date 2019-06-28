@@ -8,7 +8,13 @@ $this->addExternalJS($templateFolder . '/chart.bundle.min.js');
 			<div class="site-case__type"><?=$arResult['PROPERTIES']['TYPE']['VALUE']?></div>
 			<h1 class="site-case__title page-title"><?=$arResult['NAME']?></h1>
 			<div class="site-case__slogan slogan angle"><b>Цель:</b> <?=$arResult['PREVIEW_TEXT']?></div>
-			<a class="site-case__link" href="<?=$arResult['PROPERTIES']['LINK']['VALUE']?>" target="_blank"><?=$arResult['PROPERTIES']['LINK']['VALUE']?></a>
+			<a class="site-case__link" href="<?=$arResult['PROPERTIES']['LINK']['VALUE']?>" target="_blank">
+				<?if(empty($arResult['PROPERTIES']['LINK']['DESCRIPTION'])):
+					echo $arResult['PROPERTIES']['LINK']['VALUE'];
+				else: 
+					echo $arResult['PROPERTIES']['LINK']['DESCRIPTION'];
+				endif;?>
+			</a>
 		</div>
 		<div class="site-case__head-image">
 			<img src="<?=$arResult['DETAIL_PICTURE']['SRC']?>" alt="<?=$arResult['DETAIL_PICTURE']['ALT']?>" title="<?=$arResult['DETAIL_PICTURE']['TITLE']?>">

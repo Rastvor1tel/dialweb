@@ -282,6 +282,10 @@ $(function(){
 			yaCounter1199858.reachGoal('call2');
 			console.log("call2 ok");
 		});
+		$('.header__phone-link.zphone').click(function(){
+			yaCounter1199858.reachGoal('call2');
+			console.log("call2 ok");
+		});
 	}else if(host == 'kaluga.dialweb.ru'){
 		
 		//Kaluga.dialweb.ru
@@ -302,6 +306,16 @@ $(function(){
 					yaCounter1199858.reachGoal('konsultant');
 					break;
 			}
+		});
+
+		$('#call1').click(function(){
+			yaCounter1199858.reachGoal('call1');
+			console.log("call1 ok");
+		});
+		
+		$('.header__phone-link.zphone').click(function(){
+			yaCounter1199858.reachGoal('call2');
+			console.log("call2 ok");
 		});
 
 	}else if(host == 'ryazan.dialweb.ru'){

@@ -1,5 +1,9 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
-$APPLICATION->IncludeComponent('dial:city', '');
+use Bitrix\Main\Localization\Loc;
+Loc::loadMessages(__FILE__);
+/**
+ * @var $APPLICATION CMain
+ */
 ?>
 <!DOCTYPE html>
 <html lang="ru">

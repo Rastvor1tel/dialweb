@@ -4,6 +4,10 @@ $this->setFrameMode(true);
 use Bitrix\Main\Page\Asset;
 Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/template/libs/swiper/swiper.min.js");
 Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/template/libs/swiper/swiper.min.css");
+
+if($arResult['PROPERTIES']['PERSON_SLOGAN']['VALUE']){
+    $APPLICATION->SetPageProperty("subtitle", $arResult['PROPERTIES']['PERSON_SLOGAN']['VALUE']['TEXT']);
+}
 ?>
 <script>
     $(function(){
@@ -43,7 +47,7 @@ Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/template/libs/swiper/swiper.
                 <?if ($arResult['PROPERTIES']['START_WORKING']['VALUE']):?>
                 <div class="person-data__item">
                     <div class="person-data__title">Опыт работы в отрасли</div>
-                    <div class="person-data__value">c <?=explode('.', $arResult['PROPERTIES']['START_WORKING']['VALUE'])[2]?> года</div>
+                    <div class="person-data__value">с <?=explode('.', $arResult['PROPERTIES']['START_WORKING']['VALUE'])[2]?> года</div>
                 </div>
                 <?endif;?>
                 <?if ($arResult['PROPERTIES']['DIAL_WORKING']['VALUE']):?>
@@ -55,12 +59,18 @@ Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/template/libs/swiper/swiper.
             </div>
         </div>
     </div>
-    <?if ($arResult['PROPERTIES']['SKILLS']['VALUE'] || $arResult['PROPERTIES']['PROJECTS']['VALUE']):?>
+    <?if ($arResult['PROPERTIES']['SKILLS']['VALUE'] || $arResult['PROPERTIES']['PROJECTS']['VALUE'] || $arResult['PREVIEW_TEXT']):?>
     <div class="person-feature person-block">
         <div class="person-feature__title person__numered-title">Автопортрет</div>
         <div class="person-feature__content">
-            <div class="person-feature__about">Несколько слов сотрудника о себе
-                и  своих интересах</div>
+            <div class="person-feature__about">
+                <?if($arResult['DETAIL_TEXT']):?>
+                    <?=$arResult['DETAIL_TEXT']?>
+                <?else:?>
+                    Несколько слов сотрудника о себе
+                    и  своих интересах
+                <?endif;?>
+            </div>
             <div class="person-feature__list">
                 <?if ($arResult['PROPERTIES']['SKILLS']['VALUE']):?>
                 <div class="feature-list">
@@ -124,7 +134,7 @@ Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/template/libs/swiper/swiper.
         <div class="person-achievement__list">
             <?
             foreach($arResult['PROPERTIES']['ACHIVMENTS']['VALUE'] as $key => $arItem) {
-                echo '<div class="person-achievement__item"><b>'.$arItem.'</b><br>'.$arResult['PROPERTIES']['ADDITIONAL_COURSE']['DESCRIPTION'][$key].'</div>';
+                echo '<div class="person-achievement__item"><b>'.$arItem.'</b><br>'.$arResult['PROPERTIES']['ACHIVMENTS']['DESCRIPTION'][$key].'</div>';
             }
             ?>
         </div>
