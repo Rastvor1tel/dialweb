@@ -1,4 +1,4 @@
-Options -Indexes 
+Options -Indexes
 ErrorDocument 404 /404.php
 
 RewriteCond %{HTTP_USER_AGENT} ^.*(AhrefsBot|SemrushBot|SolomonoBot|SearchBot|dotbot|SearchBot|MJ12bot).* [NC]
@@ -10,12 +10,18 @@ php_flag session.use_trans_sid off
   #php_value mbstring.internal_encoding UTF-8
   </IfModule>
 
+<IfModule mod_rewrite.c>
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{HTTP_ACCEPT} image/webp
+  RewriteRule (.+)\.webp$ /local/php_interface/webp/make.php [L,NC]
+</IfModule>
+
   <IfModule mod_rewrite.c>
   Options +FollowSymLinks
   RewriteEngine On
 
   #sitemap
-  RewriteRule ^sitemap\.xml$ sitemap\.php [L]    
+  RewriteRule ^sitemap\.xml$ sitemap\.php [L]
   # start custom redirects
   # about section
   RewriteRule ^o-kompanii/$ /about/ [R=301,L]
@@ -42,7 +48,7 @@ php_flag session.use_trans_sid off
   # others
   RewriteRule ^akademiya/$ /academy/ [R=301,L]
   RewriteRule ^price/$ /services/ [R=301,L]
-  
+  RewriteRule ^index.php$ / [R=301,L]
   RewriteRule ^robots.txt$ /robots.php [L,QSA]
   # remove www redirect
   RewriteCond %{HTTP_HOST} ^www.(.*)$ [NC]
@@ -70,9 +76,14 @@ php_flag session.use_trans_sid off
 
   <IfModule mod_expires.c>
   ExpiresActive on
+  ExpiresByType font/ttf "access 1 week"
+  ExpiresByType font/woff "access 1 week"
+  ExpiresByType font/woff2 "access 1 week"
   ExpiresByType image/jpeg "access plus 3 day"
+  ExpiresByType image/jpg "access plus 3 day"
+  ExpiresByType image/webp "access plus 3 day"
   ExpiresByType image/gif "access plus 3 day"
   ExpiresByType image/png "access plus 3 day"
   ExpiresByType text/css "access plus 3 day"
-  ExpiresByType application/javascript "access plus 3 day"  
+  ExpiresByType application/javascript "access plus 3 day"
   </IfModule>

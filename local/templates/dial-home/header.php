@@ -26,7 +26,7 @@ Loc::loadMessages(__FILE__);
                                 <?=Loc::getMessage("BANNER_DESCR");?>
                             </div>
                             <a class="banner__video video-button"
-                               href="https://www.youtube.com/watch?v=7DllWvwUpQ0&autoplay=1&rel=0&&showinfo=0"
+                               href="https://www.youtube.com/watch?v=NNpk78i0RWc&autoplay=1&rel=0&&showinfo=0"
                                data-fancybox>
                                 <svg class="video-button__icon">
                                     <use xlink:href="<?= TEMPLATE_PATH ?>/img/icons.svg#play"></use>
@@ -35,7 +35,7 @@ Loc::loadMessages(__FILE__);
                                     <span class="video-button__text"><?=Loc::getMessage("VIDEO_BUTTON_TEXT");?></span>
                                     <span class="video-button__link">
                                         <span class="video-button__link-text"><?=Loc::getMessage("VIDEO_BUTTON_LINK_TEXT");?></span>
-                                        <span class="video-button__link-time">2:23</span>
+                                        <span class="video-button__link-time">1:38</span>
                                     </span>
                                 </span>
                             </a>
@@ -382,7 +382,7 @@ Loc::loadMessages(__FILE__);
                                 <button type="button" class="contacts__city<?= SITE_ID == 's3' ? ' _active' : ''; ?>">
                                     <?=Loc::getMessage("CONTACTS_CITY2");?>
                                 </button>
-                                <button type="button" class="contacts__city">
+                                <button type="button" class="contacts__city _moscow">
                                     <?=Loc::getMessage("CONTACTS_CITY3");?>
                                 </button>
                             </div>
@@ -405,7 +405,7 @@ Loc::loadMessages(__FILE__);
                                 <div class="contacts__block">
                                     <div class="contacts__block-item">
                                         <div class="contacts__block-name"><?=Loc::getMessage("CONTACTS_PHONE");?></div>
-                                        <a class="contacts__block-info" href="tel:+74872250419">+7 (4872) 25-04-19</a>
+                                        <?$APPLICATION->IncludeComponent('dial:city.show', '', ['FIELD' => 'PROPERTY_PHONE', 'CITY_CODE' => 'RU-TUL', 'CLASS' => 'contacts__block-info roistat-phone04-19']);?>
                                         <a class="contacts__block-info" href="tel:+79534256999">+7 (953) 425-69-99</a>
                                     </div>
                                     <div class="contacts__block-item">
@@ -428,7 +428,17 @@ Loc::loadMessages(__FILE__);
                                 <div class="contacts__block">
                                     <div class="contacts__block-item">
                                         <div class="contacts__block-name"><?=Loc::getMessage("CONTACTS_PHONE");?></div>
-                                        <a class="contacts__block-info" href="tel:+74842202484">+7 (4842) 20-24-84</a>
+                                        <?$APPLICATION->IncludeComponent(
+	"dial:city.show", 
+	".default", 
+	array(
+		"FIELD" => "PROPERTY_PHONE",
+		"CITY_CODE" => "RU-KLU",
+		"CLASS" => "contacts__block-info roistat-phone-4842",
+		"COMPONENT_TEMPLATE" => ".default"
+	),
+	false
+);?>
                                         <a class="contacts__block-info" href="tel:+79308493454">+7 (930) 849-34-54</a>
                                     </div>
                                     <div class="contacts__block-item">
@@ -437,7 +447,7 @@ Loc::loadMessages(__FILE__);
                                     </div>
                                 </div>
                             </div>
-                            <div class="contacts__info">
+                            <div class="contacts__info _moscow">
                                 <div class="contacts__block">
                                     <div class="contacts__block-item">
                                         <div class="contacts__block-name _large"><?=Loc::getMessage("CONTACTS_TOLLFREE");?></div>
@@ -451,7 +461,7 @@ Loc::loadMessages(__FILE__);
                                 <div class="contacts__block">
                                     <div class="contacts__block-item">
                                         <div class="contacts__block-name"><?=Loc::getMessage("CONTACTS_PHONE");?></div>
-                                        <a class="contacts__block-info" href="tel:+74959663898">+7 (495) 966-38-98</a>
+                                        <?$APPLICATION->IncludeComponent('dial:city.show', '', ['FIELD' => 'PROPERTY_PHONE', 'CITY_CODE' => 'RU-MOW', 'CLASS' => 'contacts__block-info roistat-phone-495']);?>
                                         <a class="contacts__block-info" href="tel:+79035385939">+7 (903) 538-59-39</a>
                                     </div>
                                     <div class="contacts__block-item">

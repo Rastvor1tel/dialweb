@@ -1,172 +1,248 @@
 <?
-require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetPageProperty("title", "Продвижение с оплатой за трафик. Трафиковое продвижение сайтов в Туле,");
 $APPLICATION->SetPageProperty("description", "Продвижение сайтов по трафику, раскрутка с оплатой за привлеченный трафик.");
 $APPLICATION->SetTitle("Продвижение по трафику");
-?>
-<div class="promotion"> 
-  
-        <div class="guarantee">
-            <div class="guarantee__price">
-                от 30 000 руб.
-            </div>
-            <div class="guarantee__text">
-                <p class="creation-site__text">Основная цель продвижения по трафику: увеличение посещаемости вашего сайта путем привлечения целевой аудитории с помощью поискового продвижения сайта.</p>
-            </div>
-        </div>  
-        <h2 class="h2 h2_phase">Кому подходит данный тариф</h2>
-        <div class="suitable-tariff">
-            <div class="stariff-item">
-                <div class="stariff-item__numer">1</div>
-                <p>Сайтам с большим количеством страниц (от 1 000 страниц) и большим списком запросов</p>
-            </div>
-            <div class="stariff-item">
-                <div class="stariff-item__numer">2</div>
-                <p>Информационным или иным многостраничным сайтам с потенциально большим семантическим ядром</p>
-            </div>
-            <div class="stariff-item">
-                <div class="stariff-item__numer">3</div>
-                <p>Интернет-порталам со структурированными каталогами и большим количеством разделов</p>
-            </div>
-        </div>
- 
-    <h2 class="h2 h2_phase">Плюсы и минусы тарифа</h2>
-    <div class="plusminus">
-        <div class="plusminus__wrapper"></div>
-       
-            <div class="plusminus__items">
-                <div class="plusminus__left">
-                    <div class="plusminus-item">
-                        <div class="plusminus-item__icon"><img src="/local/templates/dial/template/img/promotion/icon-10.png" alt=""></div>
-                        <div class="plusminus-item__info">
-                            <p>Рост целевого трафика на сайте</p>
-                        </div>
-                    </div>
-                    <div class="plusminus-item">
-                        <div class="plusminus-item__icon"><img src="/local/templates/dial/template/img/promotion/icon-11.png" alt=""></div>
-                        <div class="plusminus-item__info">
-                            <p>Оплата только фактических переходов</p>
-                        </div>
-                    </div>
-                    <div class="plusminus-item">
-                        <div class="plusminus-item__icon"><img src="/local/templates/dial/template/img/promotion/icon-12.png" alt=""></div>
-                        <div class="plusminus-item__info">
-                            <p>Широкая география привлечения клиентов</p>
-                        </div>
-                    </div>
-                    <div class="plusminus-item">
-                        <div class="plusminus-item__icon"><img src="/local/templates/dial/template/img/promotion/icon-13.png" alt=""></div>
-                        <div class="plusminus-item__info">
-                            <p>Продвижение большого количества товаров и услуг</p>
-                        </div>
-                    </div>
-                    <div class="plusminus-item">
-                        <div class="plusminus-item__icon"><img src="/local/templates/dial/template/img/promotion/icon-16.png" alt=""></div>
-                        <div class="plusminus-item__info">
-                            <p>Стабильность позиций в ТОПе</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="plusminus__right">
-                    <div class="plusminus-item">
-                        <div class="plusminus-item__icon"><img src="/local/templates/dial/template/img/promotion/icon-14.png" alt=""></div>
-                        <div class="plusminus-item__info">
-                            <p>Бюджет зависит от количества и качества трафика;</p>
-                        </div>
-                    </div>
-                    <div class="plusminus-item">
-                        <div class="plusminus-item__icon"><img src="/local/templates/dial/template/img/promotion/icon-15.png" alt=""></div>
-                        <div class="plusminus-item__info">
-                            <p>Вероятность притока нецелевой аудитории;</p>
-                        </div>
-                    </div>
-                    <div class="plusminus-item">
-                        <div class="plusminus-item__icon"><img src="/local/templates/dial/template/img/promotion/icon-17.png" alt=""></div>
-                        <div class="plusminus-item__info">
-                            <p>Практически отсутствует имиджевый эффект.</p>
-                        </div>
-                    </div>
-                    <div class="plusminus__icons">
-                        <img src="/local/templates/dial/template/img/promotion/plusMinus.png" alt="">
-                        <span class="plusminus-icons__title _1">Плюсы</span>
-                        <span class="plusminus-icons__title _2">Минусы</span>
-                    </div>
-                </div>
-            </div>
-       
-    </div>  
-    <div class="promotion-price">
-        <h2 class="h2 h2_phase">Стоимость продвижения по трафику</h2>
-        <div class="promotion-price__wrapper center">
-            <div class="promotion-price__item">
-                <div class="promotion-price__title _blue">Сумма итогового<br>платежа</div>
-                <div class="promotion-price__circle">=</div>
-                <div class="promotion-price__middle">(</div>
-                <div>Общий<br>трафик</div>
-                <div class="promotion-price__middle _blue">-</div>
-                <div>Базовый<br>трафик</div>
-                <div class="promotion-price__middle _blue">*</div>
-                <div>Сезонный<br>коэффициент</div>
-                <div class="promotion-price__middle">)</div>
-                <div class="promotion-price__middle _blue">*</div>
-                <div>Стоимость<br>перехода <span class="_blue">от 0,1 рубля</span></div>
-                <div class="promotion-price__middle _blue">+</div>
-                <div><span class="promotion-price__bold">Абонентская<br>плата</span> <span class="_blue">от 30 000 рублей</span></div>
-            </div>
-            <hr class="promotion-price__hr">
-            <div class="promotion-price__date">
-                <div class="promotion-price__subtitle">Сроки продвижения:</div>
-                <p>Результат заметен спустя 1-2 месяца, в зависимости от состояния Вашей ресурса.</p>
-            </div>
-        </div> 
-    </div>
-    <?/*<?$APPLICATION->IncludeComponent(
-        "bitrix:form.result.new",
-        "promotion-service-order",
-        Array(
-            "AJAX_MODE" => "Y",
-            "AJAX_OPTION_JUMP" => "N",
-            "CACHE_TIME" => "3600",
-            "CACHE_TYPE" => "A",
-            "CHAIN_ITEM_LINK" => "",
-            "CHAIN_ITEM_TEXT" => "",
-            "COMPONENT_TEMPLATE" => "index-service-order",
-            "DIAL_FORM_CAPTION" => "Хочу продвинуть сайт",
-            "DIAL_PHONE_PLACEHOLDER" => "Введите Ваш телефон",
-            "DIAL_FORM_BUTTON" => "Заказать",
-            "EDIT_URL" => "",
-            "IGNORE_CUSTOM_TEMPLATE" => "N",
-            "LIST_URL" => "",
-            "SEF_MODE" => "N",
-            "SUCCESS_URL" => "",
-            "USE_EXTENDED_ERRORS" => "N",
-            "VARIABLE_ALIASES" => array("WEB_FORM_ID"=>"WEB_FORM_ID","RESULT_ID"=>"RESULT_ID",),
-            "WEB_FORM_ID" => "4"
-        )
-    );?>
-    <div class="brif-link">
-        <div class="center">
-            <a target="_blank" href="https://docs.google.com/forms/d/10cfbE7PctxRiR1po_vHFU9o-YIQ_e5GTBpPJgdgswMQ/viewform?edit_requested=true" class="brif-link__item">Заполнить бриф</a>
-        </div>
-    </div>*/?>
-    <div class="additional-services">
-        <h2 class="h2">Дополнительные услуги</h2>
-        <div class="additional-services__wrapper">
-            <div class="center">
-                <div class="additional-services__item _1">Контент-<br>маркетинг</div>
-                <div class="additional-services__item _2 _blue">Регистрация<br>в каталоге</div>
-                <a href="/services/audit/" class="additional-services__item _3">Проведение<br>аудитов</a>
-                <div class="additional-services__item _4 _blue">Снятие<br>санкций</div>
-                <div class="additional-services__item _5">Переход на<br>https</div>
-            </div>
-        </div>
-    </div>        
-   <?$APPLICATION->IncludeComponent("bitrix:news.list", "reviews_about", array(
-        "IBLOCK_ID" => "8",
-        "NEWS_COUNT" => "1",
-        "SET_TITLE" => "N",
-        "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
-        "PROPERTY_CODE" => array("REVIEW"),
-    ));?> 
+$APPLICATION->SetPageProperty("subtitle", "Основная цель продвижения по трафику: увеличение посещаемости вашего сайта путем
+привлечения целевой аудитории с помощью поискового продвижения сайта.");
+$APPLICATION->SetPageProperty("feedback_title", "Хотите получать клиентов?");
+use Bitrix\Main\Page\Asset;
+
+Asset::getInstance()->addCss("/local/templates/dial/template/css/seo.css");
+?><br>
+ <br>
+<div class="page-title page-title_seo">
+	 Кому подходит данный тариф?
 </div>
-<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+<div class="numbers__list">
+	<div class="numbers__item angle">
+		 Сайтам с большим количеством страниц(от 1 000 страниц) и большим списком запросов
+	</div>
+	<div class="numbers__item angle">
+		 Информационным многостраничным сайтам с потенциально большим семантическим ядром
+	</div>
+	<div class="numbers__item angle">
+		 Интернет-порталам со структурированными каталогами и большим количеством разделов
+	</div>
+</div>
+<div class="page-title page-title_seo">
+	 Плюсы и минусы тарифа
+</div>
+<div class="symbol">
+	<div class="symbol__list">
+		<div class="symbol__item symbol__item_plus">
+			 Рост целевого трафика на сайте
+		</div>
+		<div class="symbol__item symbol__item_plus">
+			 Оплата только фактических переходов
+		</div>
+		<div class="symbol__item symbol__item_plus">
+			 Широкая география привлечения клиентов
+		</div>
+		<div class="symbol__item symbol__item_plus">
+			 Продвижение большого количества товаров и услуг
+		</div>
+	</div>
+	<div class="symbol__list">
+		<div class="symbol__item symbol__item_minus">
+			 Бюджет зависит от количества и качества трафика
+		</div>
+		<div class="symbol__item symbol__item_minus">
+			 Вероятность притока нецелевой аудитории;
+		</div>
+		<div class="symbol__item symbol__item_minus">
+			 Практически отсутствует имиджевый эффект
+		</div>
+	</div>
+</div>
+<div class="page-title page-title_seo">
+	 Стоимость и сроки
+</div>
+<div class="cost">
+	<div class="cost__left">
+		<div class="cost-calc">
+			<div class="cost-calc__list cost-calc__list_half">
+				<div class="cost-calc__item">
+					<div class="cost-calc__title">
+						 Сумма итогового платежа
+					</div>
+				</div>
+				<div class="cost-calc__item cost-calc__item_eq cost-calc__item_lbracket">
+					<div class="cost-calc__description">
+						 Общий трафик
+					</div>
+				</div>
+				<div class="cost-calc__item cost-calc__item_lm cost-calc__item_minus">
+					<div class="cost-calc__description">
+						 Базовый трафик
+					</div>
+				</div>
+				<div class="cost-calc__item cost-calc__item_lm cost-calc__item_multiply cost-calc__item_rbracket">
+					<div class="cost-calc__description">
+						 Сезонный коэффициент
+					</div>
+				</div>
+				<div class="cost-calc__item cost-calc__item_lm cost-calc__item_multiply">
+					<div class="cost-calc__description">
+						 Стоимость перехода
+					</div>
+					<div class="cost-calc__price">
+						 от 0,1 рубля
+					</div>
+				</div>
+				<div class="cost-calc__item cost-calc__item_lm cost-calc__item_plus">
+					<div class="cost-calc__description cost-calc__description_bold">
+						 Абонентская плата
+					</div>
+					<div class="cost-calc__price">
+						 от 35 000 рублей
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="cost__right">
+		<div class="cost-info">
+			<div class="cost-info__title">
+				 Сроки продвижения:
+			</div>
+			<div class="cost-info__description">
+				 Результат заметен спустя 1-2 месяца, в зависимости от состояния Вашего ресурса.
+			</div>
+		</div>
+	</div>
+</div>
+<div class="feedback">
+	<div class="container-outer">
+	<div class="feedback__wrap-outer angle angle_reverse angle-white" style="background-image: url('<?= TEMPLATE_PATH ?>/img/feedback2.jpg')">
+		<!-- <div class="feedback__wrap-outer angle angle_reverse angle-white" style="background-image: url('<span id=" title="Код PHP: &lt;?= TEMPLATE_PATH ?&gt;">
+			 <?= TEMPLATE_PATH ?><span class="bxhtmled-surrogate-inner"><span class="bxhtmled-right-side-item-icon"></span><span class="bxhtmled-comp-lable" unselectable="on" spellcheck="false">Код PHP</span></span>/img/feedback2.jpg')"&gt; -->
+			<div class="container-inner">
+				<div class="feedback__wrap-inner">
+					<div class="feedback__head">
+						<div class="feedback__title _cmon">
+							 Хочу продвинуть сайт
+						</div>
+						 <!-- <div class="feedback__subtitle-text">Наш специалист перезвонит Вам, и предложит варианты решения, а так же ответит на все Ваши вопросы.</div> -->
+					</div>
+					 <?$APPLICATION->IncludeComponent(
+	"bitrix:form.result.new",
+	"feedback",
+	Array(
+		"AJAX_MODE" => "Y",
+		"AJAX_OPTION_HISTORY" => "N",
+		"AJAX_OPTION_JUMP" => "N",
+		"LIST_URL" => "",
+		"WEB_FORM_ID" => "2"
+	)
+);?>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+ <?$APPLICATION->IncludeComponent(
+	"bitrix:news.list",
+	"reviews_about",
+	Array(
+		"IBLOCK_ID" => "8",
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+		"NEWS_COUNT" => "1",
+		"PROPERTY_CODE" => array("REVIEW"),
+		"SET_TITLE" => "N"
+	)
+);?>
+<div class="container-outer">
+	<div class="container-inner">
+		<? 
+        $arrFilter = array("ID"=>424);
+        $APPLICATION->IncludeComponent("bitrix:news.list", "cases-slider", array(
+            "IBLOCK_ID" => "11",
+            "PARENT_SECTION" => $arResult['PROPERTIES']['CASES_SECTION']['VALUE'],
+            "NEWS_COUNT" => "10",
+            "SET_TITLE" => "N",
+            "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+            "ADD_SECTIONS_CHAIN" => "N",
+            "PROPERTY_CODE" => array("TYPE"),
+            "FILTER_NAME" => "arrFilter",
+        )); ?>
+		<div class="page-title page-title_seo">
+			 Дополнительные услуги
+		</div>
+		<div class="info">
+			<ul class="services__list">
+				<li class="services__item">
+				<div class="services-item">
+					<div class="services-item__title">
+						<div class="services-item__name">
+							 Контент- маркетинг
+						</div>
+						<div class="services-item__arrow">
+						</div>
+					</div>
+					<div class="services-item__info">
+						 Cовокупность маркетинговых приёмов, основанных на создании и распространении уникальной, полезной для людей информации с целью вызвать доверие и привлечь потенциальных клиентов.
+					</div>
+				</div>
+ </li>
+				<li class="services__item">
+				<div class="services-item">
+					<div class="services-item__title">
+						<div class="services-item__name">
+							 Регистрация в каталоге
+						</div>
+						<div class="services-item__arrow">
+						</div>
+					</div>
+					<div class="services-item__info">
+						 Один из методов продвижения сайта и компании в сети Интернет. Предполагает размещение информации о сайте и услугах компании в различных каталогах, справочниках организаций.
+					</div>
+				</div>
+ </li>
+				<li class="services__item">
+				<div class="services-item">
+					<div class="services-item__title">
+						<div class="services-item__name">
+							 Проведение аудитов
+						</div>
+						<div class="services-item__arrow">
+						</div>
+					</div>
+					<div class="services-item__info">
+						 Поможет избежать сохранения на сайте возможных ошибок, которые усложняют работу с сайтом со стороны пользователя и затрудняют процесс SEO-продвижения.
+					</div>
+				</div>
+ </li>
+				<li class="services__item">
+				<div class="services-item">
+					<div class="services-item__title">
+						<div class="services-item__name">
+							 Снятие санкций
+						</div>
+						<div class="services-item__arrow">
+						</div>
+					</div>
+					<div class="services-item__info">
+						 Поможем быстро вывести ваш сайт из-под санкций поисковых систем. Определим причины, устраним ошибки оптимизации, чтобы сайт смог успешно существовать и развиваться в Интернете.
+					</div>
+				</div>
+ </li>
+				<li class="services__item">
+				<div class="services-item">
+					<div class="services-item__title">
+						<div class="services-item__name">
+							 Переход на https
+						</div>
+						<div class="services-item__arrow">
+						</div>
+					</div>
+					<div class="services-item__info">
+						 Необходим для установки безопасного соединения и повышения доверия к сайту со стороны поисковых систем. Выполним корректный “переезд” сайта с протокола http на https без последствий.
+					</div>
+				</div>
+ </li>
+			</ul>
+		</div>
+	</div>
+</div>
+ <br><? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>

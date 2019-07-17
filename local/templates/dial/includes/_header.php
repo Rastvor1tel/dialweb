@@ -17,7 +17,7 @@ Loc::loadMessages(__FILE__);
             <?
             global $USER;
             //if ($USER->IsAdmin()) {
-                ?>
+                /*?>
                 <div class="dial-division tablet-hide">
                     <div class="dial-division__current">Группа компаний</div>
                     <div class="dial-division__list">
@@ -26,7 +26,7 @@ Loc::loadMessages(__FILE__);
                         <div class="dial-division__item">Video Production</div>
                     </div>
                 </div>
-                <?
+                <?*/
             //}
             ?>
         </div>
@@ -79,14 +79,14 @@ Loc::loadMessages(__FILE__);
             ?>
         </div>
         <div class="header__wrap-order">
-            <div class="dial-division tablet-show">
+            <?/*<div class="dial-division tablet-show">
                 <div class="dial-division__current">Группа компаний</div>
                 <div class="dial-division__list">
                     <div class="dial-division__item dial-division__item_current">Digital</div>
                     <div class="dial-division__item">CRM</div>
                     <div class="dial-division__item">Видеопродакшн</div>
                 </div>
-            </div>
+            </div>*/?>
             <a class="header__cases-button button" href="/portfolio/"><?= Loc::getMessage("HEADER_CASES_BUTTON"); ?></a>
         </div>
         <? if (SITE_TEMPLATE_ID == 'dial-home'): ?>

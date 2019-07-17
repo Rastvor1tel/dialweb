@@ -3,9 +3,16 @@ $(function(){
 		var data = $(this).data('values').split(',');
 		var maxValue = Math.max.apply(null, data);
 		var labels = [];
-		for (var i = 0; i < data.length; i++) {
-			labels.push('  ');
+		if ($(this).data('labels')) {
+			const string = $(this).data('labels');
+            labels = string.split(',');
+        } else {
+            for (var i = 0; i < data.length; i++) {
+                labels.push('  ');
+            }
 		}
+
+
 		new Chart($(this), {
 			type: 'line',
 			data: {
@@ -23,7 +30,7 @@ $(function(){
 				tooltips: {enabled: false},
 				scales: {
 					yAxes: [{
-						ticks: {display: false, beginAtZero: true, max: maxValue*1.25},
+						ticks: {display: true, beginAtZero: true, max: maxValue*1.25},
 					}],
 				},
 			},

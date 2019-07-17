@@ -6,10 +6,6 @@ CBitrixComponent::includeComponentClass('dial:city');
 
 Class GeoCityChange extends GeoCity {
 
-    public function checkModules() {
-        return Loader::includeModule("iblock");
-    }
-
     public function getSiteList() {
         $result = [];
         $count = 0;

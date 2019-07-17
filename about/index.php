@@ -1,73 +1,21 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+use Bitrix\Main\Localization\Loc;
+Loc::loadMessages(__FILE__);
 $APPLICATION->SetPageProperty("description", "Digital Agency Dial, о нас");
-$APPLICATION->SetTitle("О нас");
+$APPLICATION->SetTitle(Loc::getMessage('PAGE_ABOT_META_PAGETITLE'));
 ?>
 <div class="site-case about">
-	<div class="site-case__head _about">
-		<div class="site-case__name">
-			<h1 class="site-case__title page-title _no-transform">О нас</h1>
-			<div class="site-case__slogan slogan angle">
-				<p>DIAL - правильное интернет-агентство.</p>
-				<p>Оказывая услуги интернет-маркетинга, мы всегда стремимся к идеалу. Это отражено во всем — от названия нашего агентства до строгих внутренних регламентов, позволяющих контролировать важные показатели проекта. </p>
-				<p>Наша формула успеха:<br>Погружение в задачу + Правила + Рост = Dial</p></div>
-		</div>
-		<div class="site-case__head-image">
-			<img src="<?=TEMPLATE_PATH?>/img/aumera.jpg" alt="Aumera">
-			<a class="about__video" href="https://www.youtube.com/watch?v=7DllWvwUpQ0&autoplay=1&rel=0&&showinfo=0" data-fancybox>
-				<div class="about__video-info">
-					<div class="about__video-title">Давайте знакомиться!</div>
-					<div class="about__video-text">Смотреть видео (2:34)</div>
-				</div>
-			</a>
-		</div>
-	</div>
-	<div class="about__info">
-		<div class="about__statictic">
-			<div class="about__statictic-top">
-				<div class="about__statictic-text _large">с</div>
-				<div class="about__statictic-number">2009</div>
-			</div>
-			<div class="about__statictic-bottom">
-				<div class="about__statictic-text">Преданы своему делу и получаем удовольствие от работы</div>
-			</div>
-		</div>
-		<div class="about__info-content">
-			<div class="about__info-name">О наших принципах</div>
-			<div class="about__info-text">Мы ориентируемся на настоящие бизнес-показатели, влияющие на развитие вашей компании. В то время как агентства, живущие по стандартам 10-летней давности, считают только CTR объявлений, мы думаем о ваших оборотах. Другие смотрят на конверсию сайта, а “Диал” — заботится о среднем чеке и маржинальности. Мы говорим “нет” неактуальным стереотипам!</div>
-		</div>
-	</div>
-	<div class="about__info _worth">
-		<div class="about__info-content _no-margin _left">
-			<div class="about__info-name">1. Развитие</div>
-			<ul class="about__info-list">
-				<li>Постоянное повышение качества услуг</li>
-				<li>Обучение сотрудников. Собственная академия digital-наук</li>
-				<li>Отслеживание тенденций в мире интернет-маркетинга, максимально быстрое изучение и внедрение нововведений</li>
-			</ul>
-			<div class="about__info-name">2. Стандартизация</div>
-			<ul class="about__info-list">
-				<li>Регламенты по всем основным процессам</li>
-				<li>Описание нестандартных направлений деятельности</li>
-				<li>Контроль качества и соблюдения стандартов</li>
-			</ul>
-			<div class="about__info-name">3. Масштабирование</div>
-			<ul class="about__info-list">
-				<li>Увеличение показателей — как наших собственных, так и клиентов</li>
-				<li>Оцифровывание целей. Четкие и понятные критерии</li>
-				<li>Комплексное развитие вашего бизнеса — рекомендации по построению отдела продаж, внедрение CRM, оффлайн-маркетинг</li>
-			</ul>
-		</div>
-		<div class="about__statictic">
-			<div class="about__statictic-top">
-				<div class="about__statictic-number _first">80</div>
-				<div class="about__statictic-text _large">сотрудников</div>
-			</div>
-			<div class="about__statictic-bottom">
-				<div class="about__statictic-text">Развивают свое мастерство внутри и за пределами компании</div>
-			</div>
-		</div>
-	</div>
+    <?
+    $APPLICATION->IncludeComponent(
+        "bitrix:main.include",
+        "",
+        Array(
+            "AREA_FILE_SHOW" => "file",
+            "PATH" => "/about/".LANGUAGE_ID ."_about_text_1.php"
+        )
+    );
+    ?>
 	<?
 	$APPLICATION->IncludeComponent("bitrix:news.list", "team_about", array(
 		"IBLOCK_ID" => "4",
@@ -75,20 +23,22 @@ $APPLICATION->SetTitle("О нас");
 		"NEWS_COUNT" => "20",
 		"SET_TITLE" => "N",
 		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+		"ADD_SECTIONS_CHAIN" => "N",
 		"PROPERTY_CODE" => array("SERTIFICATES"),
 	));
 	?>
 	<div class="about__why">
 		<?$APPLICATION->IncludeComponent("dial:gallery", "awards", array("ELEMENT_ID" => "88"));?>
-		<div class="about__why-info">
-			<div class="about__why-title">Почему мы</div>
-			<ul class="about__why-features">
-				<li>Мы видим решение проблем каждого клиента!</li>
-				<li>Мы разрабатываем точную стратегию достижения конкретных целей!</li>
-				<li>Мы анализируем полученный результат и ищем новые пути развития бизнеса клиента.</li>
-				
-			</ul>
-		</div>
+        <?
+        $APPLICATION->IncludeComponent(
+            "bitrix:main.include",
+            "",
+            Array(
+                "AREA_FILE_SHOW" => "file",
+                "PATH" => "/about/".LANGUAGE_ID ."_about_text_2.php"
+            )
+        );
+        ?>
 	</div>
 	<?$APPLICATION->IncludeComponent("bitrix:news.list", "reviews_about", array(
 		"IBLOCK_ID" => "8",
@@ -97,5 +47,72 @@ $APPLICATION->SetTitle("О нас");
 		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
 		"PROPERTY_CODE" => array("REVIEW"),
 	));?>
+    <?
+    global $arrFilter;
+    $arrFilter = [
+        "!PROPERTY_VIDEO" => false
+    ];
+    $APPLICATION->IncludeComponent("bitrix:news.list", "video-reviews__list", Array(
+        "ACTIVE_DATE_FORMAT" => "d.m.Y",	// Формат показа даты
+        "ADD_SECTIONS_CHAIN" => "N",	// Включать раздел в цепочку навигации
+        "AJAX_MODE" => "N",	// Включить режим AJAX
+        "AJAX_OPTION_ADDITIONAL" => "",	// Дополнительный идентификатор
+        "AJAX_OPTION_HISTORY" => "N",	// Включить эмуляцию навигации браузера
+        "AJAX_OPTION_JUMP" => "N",	// Включить прокрутку к началу компонента
+        "AJAX_OPTION_STYLE" => "Y",	// Включить подгрузку стилей
+        "CACHE_FILTER" => "N",	// Кешировать при установленном фильтре
+        "CACHE_GROUPS" => "Y",	// Учитывать права доступа
+        "CACHE_TIME" => "36000000",	// Время кеширования (сек.)
+        "CACHE_TYPE" => "A",	// Тип кеширования
+        "CHECK_DATES" => "Y",	// Показывать только активные на данный момент элементы
+        "DETAIL_URL" => "",	// URL страницы детального просмотра (по умолчанию - из настроек инфоблока)
+        "DISPLAY_BOTTOM_PAGER" => "Y",	// Выводить под списком
+        "DISPLAY_DATE" => "Y",	// Выводить дату элемента
+        "DISPLAY_NAME" => "Y",	// Выводить название элемента
+        "DISPLAY_PICTURE" => "Y",	// Выводить изображение для анонса
+        "DISPLAY_PREVIEW_TEXT" => "Y",	// Выводить текст анонса
+        "DISPLAY_TOP_PAGER" => "N",	// Выводить над списком
+        "FIELD_CODE" => array(	// Поля
+            0 => "",
+            1 => "",
+        ),
+        "FILTER_NAME" => "arrFilter",	// Фильтр
+        "HIDE_LINK_WHEN_NO_DETAIL" => "N",	// Скрывать ссылку, если нет детального описания
+        "IBLOCK_ID" => "8",	// Код информационного блока
+        "IBLOCK_TYPE" => "secondary",	// Тип информационного блока (используется только для проверки)
+        "INCLUDE_IBLOCK_INTO_CHAIN" => "N",	// Включать инфоблок в цепочку навигации
+        "INCLUDE_SUBSECTIONS" => "Y",	// Показывать элементы подразделов раздела
+        "MESSAGE_404" => "",	// Сообщение для показа (по умолчанию из компонента)
+        "NEWS_COUNT" => "2",	// Количество новостей на странице
+        "PAGER_BASE_LINK_ENABLE" => "N",	// Включить обработку ссылок
+        "PAGER_DESC_NUMBERING" => "N",	// Использовать обратную навигацию
+        "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",	// Время кеширования страниц для обратной навигации
+        "PAGER_SHOW_ALL" => "N",	// Показывать ссылку "Все"
+        "PAGER_SHOW_ALWAYS" => "N",	// Выводить всегда
+        "PAGER_TEMPLATE" => "show_more",	// Шаблон постраничной навигации
+        "PAGER_TITLE" => "Новости",	// Название категорий
+        "PARENT_SECTION" => "",	// ID раздела
+        "PARENT_SECTION_CODE" => "",	// Код раздела
+        "PREVIEW_TRUNCATE_LEN" => "",	// Максимальная длина анонса для вывода (только для типа текст)
+        "PROPERTY_CODE" => array(	// Свойства
+            0 => "VIDEO",
+            1 => "",
+        ),
+        "SET_BROWSER_TITLE" => "N",	// Устанавливать заголовок окна браузера
+        "SET_LAST_MODIFIED" => "N",	// Устанавливать в заголовках ответа время модификации страницы
+        "SET_META_DESCRIPTION" => "Y",	// Устанавливать описание страницы
+        "SET_META_KEYWORDS" => "N",	// Устанавливать ключевые слова страницы
+        "SET_STATUS_404" => "N",	// Устанавливать статус 404
+        "SET_TITLE" => "N",	// Устанавливать заголовок страницы
+        "SHOW_404" => "N",	// Показ специальной страницы
+        "SORT_BY1" => "ACTIVE_FROM",	// Поле для первой сортировки новостей
+        "SORT_BY2" => "SORT",	// Поле для второй сортировки новостей
+        "SORT_ORDER1" => "DESC",	// Направление для первой сортировки новостей
+        "SORT_ORDER2" => "ASC",	// Направление для второй сортировки новостей
+        "STRICT_SECTION_CHECK" => "N",	// Строгая проверка раздела для показа списка
+        "COMPONENT_TEMPLATE" => ".default"
+    ),
+        false
+    );?>
 </div>
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

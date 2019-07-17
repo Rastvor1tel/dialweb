@@ -1,5 +1,6 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 $this->setFrameMode(true);
+use Bitrix\Main\Localization\Loc;
 if (isset($_GET['SHOW_MORE'])) {
 	$APPLICATION->RestartBuffer();
 	while (ob_get_level()) {
@@ -18,8 +19,24 @@ if (isset($_GET['SHOW_MORE'])) {
 					<img src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>" alt="">
 				</div>
 				<div class="seo-cases__company">
-					<div class="seo-cases__type"><?=$arItem["PROPERTIES"]["TYPE"]["VALUE"]?></div>
-					<div class="seo-cases__name"><?=$arItem["NAME"]?></div>
+					<div class="seo-cases__type">
+                        <?
+                        if (LANGUAGE_ID == 'ru') {
+                            echo $arItem["PROPERTIES"]["TYPE"]["VALUE"];
+                        } else {
+                            echo $arItem['PROPERTIES'][strtoupper(LANGUAGE_ID).'_TYPE']['VALUE'];
+                        }
+                        ?>
+                    </div>
+					<div class="seo-cases__name">
+                        <?
+                        if (LANGUAGE_ID == 'ru') {
+                            echo $arItem['NAME'];
+                        } else {
+                            echo $arItem['PROPERTIES'][strtoupper(LANGUAGE_ID).'_MANE']['VALUE'];
+                        }
+                        ?>
+                    </div>
 
 
 			
@@ -33,22 +50,46 @@ if (isset($_GET['SHOW_MORE'])) {
 
 
 					<a class="seo-cases__more button button_grey button_arrow" href="<?=$arItem['DETAIL_PAGE_URL']?>">
-						<div class="button__arrow-text">Смотреть кейс</div>
+						<div class="button__arrow-text"><?= Loc::getMessage("BUTTON_DETAIL") ?></div>
 						<div class="button__arrow"></div>
 					</a>
 				</div>
 			</div>
 			<div class="seo-cases__info">
 				<div class="seo-cases__target">
-					<div class="seo-cases__target-title">Цель:</div>
-					<div class="seo-cases__target-text"><?=$arItem["PREVIEW_TEXT"]?></div>
+					<div class="seo-cases__target-title"><?= Loc::getMessage("TEXT_TARGET") ?></div>
+					<div class="seo-cases__target-text">
+                        <?
+                        if (LANGUAGE_ID == 'ru') {
+                            echo $arItem['PREVIEW_TEXT'];
+                        } else {
+                            echo $arItem['PROPERTIES'][strtoupper(LANGUAGE_ID).'_INTROTEXT']['VALUE']['TEXT'];
+                        }
+                        ?>
+                    </div>
 				</div>
 				<div class="seo-cases__result">
 					<div class="seo-cases__result-title">
-						<span>Результат</span>
-						<span><?=$arItem["PROPERTIES"]["RESULT_LIST"]["DESCRIPTION"]?></span>
+						<span><?= Loc::getMessage("TEXT_RESULT") ?></span>
+						<span>
+                            <?
+                            if (LANGUAGE_ID == 'ru') {
+                                echo $arItem["PROPERTIES"]["RESULT_LIST"]["DESCRIPTION"];
+                            } else {
+                                echo $arItem['PROPERTIES'][strtoupper(LANGUAGE_ID).'_RESULT_LIST']['DESCRIPTION'];
+                            }
+                            ?>
+                        </span>
 					</div>
-					<div class="seo-cases__result-info"><?=$arItem["PROPERTIES"]["RESULT_LIST"]["VALUE"]?></div>
+					<div class="seo-cases__result-info">
+                        <?
+                        if (LANGUAGE_ID == 'ru') {
+                            echo $arItem["PROPERTIES"]["RESULT_LIST"]["VALUE"];
+                        } else {
+                            echo $arItem['PROPERTIES'][strtoupper(LANGUAGE_ID).'_RESULT_LIST']['VALUE'];
+                        }
+                        ?>
+                    </div>
 				</div>
 			</div>
 		</div>

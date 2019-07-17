@@ -8,7 +8,11 @@ if ($this->StartResultCache(86400))
 	CModule::IncludeModule("iblock");
 	$props = CIBlockElement::GetProperty(5, $arParams["ELEMENT_ID"]);
 	while ($prop = $props->GetNext()) {
-		$arResult["ITEMS"][] = CFile::GetFileArray($prop["VALUE"]);
+	    if ($prop['CODE']=='IMAGES') {
+            $arResult["ITEMS"][] = CFile::GetFileArray($prop["VALUE"]);
+        } else {
+            $arResult["PROP"][$prop['CODE']][] = $prop['VALUE'];
+        }
 	}
 
 	$this->IncludeComponentTemplate();

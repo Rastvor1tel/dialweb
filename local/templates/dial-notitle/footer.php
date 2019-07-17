@@ -30,5 +30,7 @@
 	if (SITE_ID != 's1')
 		$APPLICATION->IncludeComponent("dial:meta.edit", "", Array());
 	?>
+<?$APPLICATION->IncludeComponent("dial:city.meta", "", []);?>
+
 </body>
 </html>

@@ -1,8 +1,10 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+use Bitrix\Main\Localization\Loc;
+Loc::loadMessages(__FILE__);
 $APPLICATION->SetPageProperty("description", "Команда Digital Agency Dial.");
-$APPLICATION->SetPageProperty("subtitle", "Мы являемся фанатиками собственного дела. Результат нашей работы - это долгая, кропотливая работа в поисках свежих идей, новых решений и технологий");
-$APPLICATION->SetTitle("Наша команда");
+$APPLICATION->SetPageProperty("subtitle", Loc::getMessage('PAGE_TEAM_META_SUBTITLE'));
+$APPLICATION->SetTitle(Loc::getMessage('PAGE_TEAM_META_PAGETITLE'));
 
 $APPLICATION->IncludeComponent(
 	"bitrix:news", 

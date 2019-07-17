@@ -9,14 +9,26 @@ $this->setFrameMode(true);
 	?>
 		<div class="development__tab tabs__items">
 			<a href="<?=$arSection['SECTION_PAGE_URL']?>" class="development__tab tabs__item button<?=$arSection['CUR_SECTION']=='Y'?' _active':''?>">
-				<?=$arSection['NAME']?>
+                <?
+                if (LANGUAGE_ID == 'ru') {
+                    echo $arSection['NAME'];
+                } else {
+                    echo $arSection['UF_'.strtoupper(LANGUAGE_ID).'_NAME'];
+                }
+                ?>
 				<span class="tabs__count"><?=$arSection['ELEMENT_CNT']?></span>
 			</a>
 			<?if ($arSection['SUBSECTION']):?>
 			<div class="development__tab tabs__subitems">
 				<?foreach ($arSection['SUBSECTION'] as $key => $arSubSection):?>
 					<a href="<?=$arSubSection['SECTION_PAGE_URL']?>" class="development__tab tabs__item button<?=$arSubSection['CUR_SECTION']=='Y'?' _active':''?>">
-						<?=$arSubSection['NAME']?>
+                        <?
+                        if (LANGUAGE_ID == 'ru') {
+                            echo $arSubSection['NAME'];
+                        } else {
+                            echo $arSubSection['UF_'.strtoupper(LANGUAGE_ID).'_NAME'];
+                        }
+                        ?>
 						<span class="tabs__count"><?=$arSubSection['ELEMENT_CNT']?></span>
 					</a>
 				<?endforeach;?>

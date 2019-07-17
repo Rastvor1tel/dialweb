@@ -6,10 +6,6 @@ CBitrixComponent::includeComponentClass('dial:city');
 
 Class GeoCityShow extends GeoCity {
 
-    public function checkModules() {
-        return Loader::includeModule("iblock");
-    }
-
     public function getCityData() {
         $cityCode = ($this->arParams['CITY_CODE']) ? $this->arParams['CITY_CODE'] : GeoCity::getCityCurrent();
         $field = $this->arParams['FIELD'] ? $this->arParams['FIELD'] : 'PROPERTY_PHONE';

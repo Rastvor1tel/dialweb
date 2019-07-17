@@ -1,8 +1,10 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+use Bitrix\Main\Localization\Loc;
+Loc::loadMessages(__FILE__);
 $APPLICATION->SetPageProperty("description", "Архив новостей компании.");
-$APPLICATION->SetPageProperty("subtitle", "Все самое интересное из жизни компании. Мы публикуем статьи, исследования, новости рынка и контекстной рекламы");
-$APPLICATION->SetTitle("Новости");
+$APPLICATION->SetPageProperty("subtitle", Loc::getMessage('PAGE_NEWS_META_SUBTITLE'));
+$APPLICATION->SetTitle(Loc::getMessage('PAGE_NEWS_META_PAGETITLE'));
 ?>
 
 <?$APPLICATION->IncludeComponent("bitrix:news", "news", array(

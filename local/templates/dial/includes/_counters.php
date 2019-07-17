@@ -2,9 +2,7 @@
 <div style="display:none;">
 <!--noindex-->
 
-<!-- Yandex.Metrika informer -->
-<a href="https://metrika.yandex.ru/stat/?id=1199858&amp;from=informer" target="_blank" rel="nofollow"><img src="//bs.yandex.ru/informer/1199858/2_0_FFFFFFFF_EFEFEFFF_0_visits" style="width:80px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (визиты)" onclick="try{Ya.Metrika.informer({i:this,id:1199858,type:0,lang:'ru'});return false}catch(e){}"/></a>
-<!-- /Yandex.Metrika informer -->
+
 
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript" data-skip-moving="true">
@@ -22,8 +20,7 @@
 <script src="//mc.yandex.ru/metrika/watch.js" type="text/javascript" defer="defer" data-skip-moving="true"></script>
 <noscript><div><img src="//mc.yandex.ru/watch/1199858" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
-
-
+<?if(SITE_ID == 's3'):?>
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript" >
    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -38,34 +35,31 @@
         webvisor:true
    });
 </script>
+<?endif;?>
+
 <noscript><div><img src="https://mc.yandex.ru/watch/33413828" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
-
-
-
-
-<!-- Yandex.Metrika informer -->
-<a href="https://metrika.yandex.ru/stat/?id=1199858&amp;from=informer"
-target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/1199858/2_0_FFFFFFFF_EFEFEFFF_0_visits"
-style="width:80px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (визиты)" class="ym-advanced-informer" data-cid="1199858" data-lang="ru" /></a>
-<!-- /Yandex.Metrika informer -->
-
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-   ym(1199858, "init", {
-        id:1199858,
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true,
-        webvisor:true
-   });
+<script type="text/javascript">!function(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src="https://vk.com/js/api/openapi.js?160",t.onload=function(){VK.Retargeting.Init("VK-RTRG-339216-8FXmS"),VK.Retargeting.Hit()},document.head.appendChild(t)}();</script><noscript><img src="https://vk.com/rtrg?p=VK-RTRG-339216-8FXmS" style="position:fixed; left:-999px;" alt=""/></noscript>
+<!-- Facebook Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '253617451813441');
+  fbq('track', 'PageView');
 </script>
-<noscript><div><img src="https://mc.yandex.ru/watch/1199858" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=253617451813441&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+
+
 
 
 <!--LiveInternet counter--><script type="text/javascript" data-skip-moving="true"><!--
@@ -97,10 +91,10 @@ screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
 <a title="Участник проекта CMS Magazine" href="http://www.cmsmagazine.ru/creators/dialweb/" target="_blank" rel="nofollow">Участник проекта CMS Magazine</a>
 
 <script type="text/javascript">
-	(function ct_load_script() { 
-		var ct = document.createElement('script'); ct.type = 'text/javascript'; 
-		ct.src = document.location.protocol+'//cc.calltracking.ru/phone.559b0.4978.async.js?nc='+Math.floor(new Date().getTime()/300000); 
-		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ct, s); 
+	(function ct_load_script() {
+		var ct = document.createElement('script'); ct.type = 'text/javascript';
+		ct.src = document.location.protocol+'//cc.calltracking.ru/phone.559b0.4978.async.js?nc='+Math.floor(new Date().getTime()/300000);
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ct, s);
 	})();
 </script>
 

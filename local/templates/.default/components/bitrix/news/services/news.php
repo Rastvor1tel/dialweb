@@ -8,5 +8,9 @@ $this->setFrameMode(true);
 		"NEWS_COUNT" => "100",
 		"SET_TITLE" => "N",
 		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+        "PROPERTY_CODE" => array(
+            0 => "EN_NAME",
+            1 => "EN_INTROTEXT"
+        )
 	));?>
 </div>

@@ -1,5 +1,6 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
-
+use Bitrix\Main\Localization\Loc;
+Loc::loadMessages(__FILE__);
 if (!empty($GLOBALS['DEV_ELEMENT_ID'])) {
 	$APPLICATION->IncludeComponent("dial:siblings", "development", array(
 		"IBLOCK_ID" => 11,
@@ -14,8 +15,8 @@ if (!empty($GLOBALS['DEV_ELEMENT_ID'])) {
 				<div class="container-inner">
 					<div class="feedback__wrap-inner">
 						<div class="feedback__head">
-							<div class="feedback__title">Хотите продвинуть свой сайт?</div>
-							<div class="feedback__subtitle">Отправьте нам заявку</div>
+							<div class="feedback__title"><?=Loc::getMessage('PAGE_CASES_BOTTOM_FEEDBACK_TITLE')?></div>
+							<div class="feedback__subtitle"><?=Loc::getMessage('PAGE_CASES_BOTTOM_FEEDBACK_SUBTITLE')?></div>
 						</div>
 						<?$APPLICATION->IncludeComponent("bitrix:form.result.new", "feedback", array(
 							"WEB_FORM_ID" => "2",

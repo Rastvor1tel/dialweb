@@ -14,7 +14,20 @@ if (!empty($arResult['PROPERTIES']['TEAM']['VALUE'])) {
 }
 
 if (!empty($arResult['PROPERTIES']['REVIEW']['VALUE'])) {
-	$arSelect = array('IBLOCK_ID', 'ID', 'NAME', 'PREVIEW_PICTURE', 'PREVIEW_TEXT', 'PROPERTY_REVIEW', 'PROPERTY_AUTHOR', 'PROPERTY_POSITION');
+	$arSelect = array(
+	    'IBLOCK_ID',
+        'ID',
+        'NAME',
+        'PREVIEW_PICTURE',
+        'PREVIEW_TEXT',
+        'PROPERTY_REVIEW',
+        'PROPERTY_AUTHOR',
+        'PROPERTY_POSITION',
+        'PROPERTY_EN_NAME',
+        'PROPERTY_'.strtoupper(LANGUAGE_ID).'_INTROTEXT',
+        'PROPERTY_'.strtoupper(LANGUAGE_ID).'_AUTHOR',
+        'PROPERTY_'.strtoupper(LANGUAGE_ID).'_POSITION',
+        );
 	$arFilter = array('ID' => $arResult['PROPERTIES']['REVIEW']['VALUE'], 'IBLOCK_ID' => 8);
 	$review = CIBlockElement::GetList(false, $arFilter, false, false, $arSelect)->GetNext();
 	if (!empty($review['PROPERTY_REVIEW_VALUE'])) {

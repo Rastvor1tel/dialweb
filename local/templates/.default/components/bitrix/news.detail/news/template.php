@@ -2,6 +2,7 @@
 $this->setFrameMode(true);
 $shareUrl = urlencode('https://' . $_SERVER['SERVER_NAME'] . $arResult["DETAIL_PAGE_URL"]);
 ?>
+
 <div class="blog-inner">
 	<h1 class="blog-inner__title"><?=$arResult["NAME"]?></h1>
 	<div class="blog-inner__info">

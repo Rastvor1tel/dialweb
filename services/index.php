@@ -1,8 +1,10 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetPageProperty("description", "Услуги Digital Agency Dial.");
-$APPLICATION->SetPageProperty("subtitle", "Настоящий правильный комплекс интернет-маркетинга");
-$APPLICATION->SetTitle("Услуги");
+use Bitrix\Main\Localization\Loc;
+Loc::loadMessages(__FILE__);
+$APPLICATION->SetPageProperty("description", Loc::getMessage('PAGE_SERVICES_META_DESCRIPTION'));
+$APPLICATION->SetPageProperty("subtitle", Loc::getMessage('PAGE_SERVICES_META_SUBPAGETITLE'));
+$APPLICATION->SetTitle(Loc::getMessage('PAGE_SERVICES_META_PAGETITLE'));
 
 /* global $USER;
 if ($USER->IsAdmin()) {

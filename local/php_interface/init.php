@@ -52,12 +52,3 @@ function emailIpDivider($WEB_FORM_ID, $RESULT_ID) {
             break;
     }
 }
-
-function p($smth) {
-    global $USER;
-    if ($USER->IsAdmin()) {
-        echo '<pre>';
-        print_r($smth);
-        echo '</pre>';
-    }
-}

@@ -1,9 +1,11 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetPageProperty("title", "Блог о SEO и интернет-маркетинге");
-$APPLICATION->SetPageProperty("description", "Блог о SEO и интернет-маркетинге");
-$APPLICATION->SetPageProperty("subtitle", "Все самое интересное из жизни компании. Мы публикуем статьи, исследования, новости рынка и контекстной рекламы.");
-$APPLICATION->SetTitle("Блог");
+use Bitrix\Main\Localization\Loc;
+Loc::loadMessages(__FILE__);
+$APPLICATION->SetPageProperty("title", Loc::getMessage('PAGE_BLOG_META_BROWSERTITLE'));
+$APPLICATION->SetPageProperty("description", Loc::getMessage('PAGE_BLOG_META_BROWSERTITLE'));
+$APPLICATION->SetPageProperty("subtitle", Loc::getMessage('PAGE_BLOG_META_SUBTITLE'));
+$APPLICATION->SetTitle(Loc::getMessage('PAGE_BLOG_META_PAGETITLE'));
 ?>
 <?$APPLICATION->IncludeComponent("bitrix:news", "blog", array(
 	"IBLOCK_TYPE" => "primary",

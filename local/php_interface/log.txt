@@ -1,0 +1,36 @@
+object(Bitrix\Main\Service\GeoIp\Data)#76 (16) {
+  ["ip"]=>
+  string(11) "95.64.155.1"
+  ["lang"]=>
+  string(2) "ru"
+  ["countryName"]=>
+  string(12) "Россия"
+  ["regionName"]=>
+  string(12) "Москва"
+  ["subRegionName"]=>
+  NULL
+  ["cityName"]=>
+  string(12) "Москва"
+  ["countryCode"]=>
+  string(2) "RU"
+  ["regionCode"]=>
+  string(6) "RU-MOW"
+  ["zipCode"]=>
+  NULL
+  ["latitude"]=>
+  float(55.75222)
+  ["longitude"]=>
+  float(37.61556)
+  ["timezone"]=>
+  string(13) "Europe/Moscow"
+  ["asn"]=>
+  NULL
+  ["ispName"]=>
+  NULL
+  ["organizationName"]=>
+  NULL
+  ["handlerClass"]=>
+  string(34) "Bitrix\Main\Service\GeoIp\SypexGeo"
+}
+
+

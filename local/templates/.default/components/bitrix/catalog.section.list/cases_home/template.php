@@ -22,28 +22,47 @@ use Bitrix\Main\Localization\Loc;
 			<?foreach ($arResult['SECTIONS'] as $key => $arSection):?>
 				<div class="cases-slider__wrap js-cases-tab-content<?=($key == 0 ? ' _active' : '')?>" data-category="<?=$key?>">
 					<?foreach ($arSection['ITEMS'] as $arItem):
-						$image = CFile::ResizeImageGet($arItem['PREVIEW_PICTURE'], array("width" => 400, "height" => 460), BX_RESIZE_IMAGE_EXACT);
+						$image = CFile::ResizeImageGet($arItem['PREVIEW_PICTURE'], array("width" => 399, "height" => 460), BX_RESIZE_IMAGE_EXACT, false, false, 70);
 						?>
 						<a href="<?=$arItem['DETAIL_PAGE_URL']?>" class="cases-slider__item case-item" style="background-image: url(<?=$image['src']?>)">
 							<div class="case-item__info">
-								<div class="case-item__type"><?=$arItem['PROPERTY_TYPE_VALUE']?></div>
-								<div class="case-item__name">
+								<div class="case-item__type">
                                     <?
                                     if (LANGUAGE_ID == 'ru') {
-                                        echo  $arItem['NAME'];
+                                        echo $arItem['PROPERTY_TYPE_VALUE'];
                                     } else {
-                                        //echo $arItem['PROPERTIES'][strtoupper(LANGUAGE_ID).'_NAME']['VALUE'];
-                                       /* echo '<pre>';
-                                        print_r($arItem);
-                                        echo '</pre>';*/
+                                        echo $arItem['PROPERTY_'.strtoupper(LANGUAGE_ID).'_TYPE_VALUE'];
                                     }
                                     ?>
                                 </div>
-								<div class="case-item__description"><?=$arItem['PREVIEW_TEXT']?></div>
+								<div class="case-item__name">
+                                    <?
+                                    if (LANGUAGE_ID == 'ru') {
+                                        echo $arItem['NAME'];
+                                    } else {
+                                        echo $arItem['PROPERTY_'.strtoupper(LANGUAGE_ID).'_MANE_VALUE'];
+                                    }
+                                    ?>
+                                </div>
+								<div class="case-item__description">
+                                    <?
+                                    if (LANGUAGE_ID == 'ru') {
+                                        echo $arItem['PREVIEW_TEXT'];
+                                    } else {
+                                        echo $arItem['~PROPERTY_'.strtoupper(LANGUAGE_ID).'_INTROTEXT_VALUE']['TEXT'];
+                                    }
+                                    ?>
+                                </div>
 							</div>
 						</a>
 					<?endforeach?>
 				</div>
+                <?
+                global $USER;
+                if ($USER->IsAdmin()) {
+                    //echo LANGUAGE_ID;
+                }
+                ?>
 			<?endforeach?>
 		</div>
 	</div>

@@ -1,4 +1,7 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
+<?
+if (LANGUAGE_ID == 'ru') {
+?>
 <?if ($arResult["isFormErrors"] == "Y"):?><?=$arResult["FORM_ERRORS_TEXT"];?><?endif?>
 <?if (($_GET["WEB_FORM_ID"] == $arResult["arForm"]["ID"]) && ($_GET["formresult"] == "addok")):?><p>Ваша заявка отправлена.</p><?endif?>
 <?=$arResult["FORM_HEADER"]?>
@@ -39,3 +42,33 @@
 	});
 	$('input[name="form_text_31"]').inputmask({mask: "+7 (999) 999-99-99", showMaskOnHover: false});
 </script>
+    <?
+} elseif (LANGUAGE_ID == 'en') {
+    ?>
+    <?if ($arResult["isFormErrors"] == "Y"):?><?=$arResult["FORM_ERRORS_TEXT"];?><?endif?>
+    <?if (($_GET["WEB_FORM_ID"] == $arResult["arForm"]["ID"]) && ($_GET["formresult"] == "addok")):?><p>Your message has been sent.</p><?endif?>
+    <?=$arResult["FORM_HEADER"]?>
+
+    <input type="hidden" name="WEB_FORM_ID" value="5" />                    <label class="feedback-form__label input-label">
+        <input type="text" name="form_text_30" value="" class="input-label__input text-input" >
+        <span class="input-label__placeholder js-placeholder">First Name</span>
+    </label>
+    <label class="feedback-form__label input-label">
+        <input type="text" name="form_text_31" value="" class="input-label__input text-input" required>
+        <span class="input-label__placeholder js-placeholder">Phone *</span>
+    </label>
+    <input type="hidden" name="form_hidden_32" value="" data-roistat-field>
+
+    <div class="feedback-form__text">By clicking SEND on the website I give consent to personal data processing</div>
+    <input type="submit" name="web_form_submit" value="Send" class="feedback-form__submit button button_white-bg">
+    <?=$arResult["FORM_FOOTER"]?>
+    <script>
+        $('.antibot').each(function(){
+            $(this).html('<input type="hidden" name="form_url_'+$(this).data('id')+'" value="' + location.href + '">');
+        });
+        $('input[name="form_text_31"]').inputmask({mask: "+7 (999) 999-99-99", showMaskOnHover: false});
+    </script>
+    <?
+}
+?>
+

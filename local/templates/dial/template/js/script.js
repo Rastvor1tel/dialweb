@@ -246,7 +246,22 @@ $(function(){
 		$('body').addClass('_overflow');		
 	}
 	
-	
+
+	//начало что бы при выборе москвы в шапке в футере был выбор москва
+	var msc_loc = $(".city-select__item.active a div").text();
+		
+	if (msc_loc == "Москва")  {
+		$('.contacts__city._active').removeClass('_active');
+		$('.contacts__city._moscow').addClass('_active');
+		$('.contacts__info._active').removeClass('_active');
+		$('.contacts__info._moscow').addClass('_active');
+		$('.contacts-page__tab._active').removeClass('_active');
+		$('.contacts-page__tab._moscow').addClass('_active');
+		$('.contacts-page__block._active').removeClass('_active');
+		$('.contacts-page__block._moscow').addClass('_active');
+	}
+	//конец
+
 })
 
 /* Yandex Metrika */
@@ -276,15 +291,18 @@ $(function(){
 
 		$('#call1').click(function(){
 			yaCounter1199858.reachGoal('call1');
+			ga('send', 'event', 'tel','clik1');
 			console.log("call1 ok");
 		});
-		$('#call2').click(function(){
+		
+		$('#call2 .header__phone-link').click(function(){
 			yaCounter1199858.reachGoal('call2');
+			ga('send', 'event', 'tel','clik2');
 			console.log("call2 ok");
 		});
-		$('.header__phone-link.zphone').click(function(){
-			yaCounter1199858.reachGoal('call2');
-			console.log("call2 ok");
+		$('#comp_6d22f334a32560374947a0ae136afaa5 .feedback-form__submit').click(function(){
+			ga('send', 'event', 'forma','sendzakaz');
+			console.log("forma ok");
 		});
 	}else if(host == 'kaluga.dialweb.ru'){
 		
@@ -310,14 +328,19 @@ $(function(){
 
 		$('#call1').click(function(){
 			yaCounter1199858.reachGoal('call1');
+			ga('send', 'event', 'tel','clik1');
 			console.log("call1 ok");
 		});
 		
-		$('.header__phone-link.zphone').click(function(){
+		$('#call2 .header__phone-link').click(function(){
 			yaCounter1199858.reachGoal('call2');
+			ga('send', 'event', 'tel','clik2');
 			console.log("call2 ok");
 		});
-
+		$('#comp_6d22f334a32560374947a0ae136afaa5 .feedback-form__submit').click(function(){
+			ga('send', 'event', 'forma','sendzakaz');
+			console.log("forma ok");
+		});
 	}else if(host == 'ryazan.dialweb.ru'){
 		//Ryazan.dialweb.ru
 	}

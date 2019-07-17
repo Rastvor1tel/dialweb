@@ -1,10 +1,14 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+use Bitrix\Main\Localization\Loc;
+Loc::loadMessages(__FILE__);
 $APPLICATION->SetPageProperty("description", "Отзывы наших клиентов о веб студии Dial.");
-$APPLICATION->SetPageProperty("title", "Отзывы о Dial Digital Agency");
-$APPLICATION->SetPageProperty("subtitle", "Доверие наших заказчиков - несомненно предмет нашей гордости");
-$APPLICATION->SetTitle("Отзывы");
-?><?$APPLICATION->IncludeComponent(
+$APPLICATION->SetPageProperty("title", Loc::getMessage('PAGE_REVIEWS_META_PAGETITLE2'));
+$APPLICATION->SetPageProperty("subtitle", Loc::getMessage('PAGE_REVIEWS_META_SUBTITLE'));
+$APPLICATION->SetTitle(Loc::getMessage('PAGE_REVIEWS_META_PAGETITLE'));
+?>
+<?
+$APPLICATION->IncludeComponent(
 	"bitrix:news.list",
 	"reviews",
 	Array(
@@ -15,4 +19,6 @@ $APPLICATION->SetTitle("Отзывы");
 		"PROPERTY_CODE" => array("REVIEW"),
 		"SET_TITLE" => "N"
 	)
-);?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+);
+?>
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

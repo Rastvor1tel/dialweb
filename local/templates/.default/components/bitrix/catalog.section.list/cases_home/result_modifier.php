@@ -1,6 +1,17 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 
-$arSelect = array('IBLOCK_ID', 'ID', 'NAME', 'PREVIEW_TEXT', 'PREVIEW_PICTURE', 'DETAIL_PAGE_URL', 'PROPERTY_TYPE');
+$arSelect = array(
+    'IBLOCK_ID',
+    'ID',
+    'NAME',
+    'PREVIEW_TEXT',
+    'PREVIEW_PICTURE',
+    'DETAIL_PAGE_URL',
+    'PROPERTY_TYPE',
+    'PROPERTY_'.strtoupper(LANGUAGE_ID).'_MANE',
+    'PROPERTY_'.strtoupper(LANGUAGE_ID).'_INTROTEXT',
+    'PROPERTY_'.strtoupper(LANGUAGE_ID).'_TYPE',
+);
 $arFilter = array('IBLOCK_ID' => 11, 'ACTIVE' => 'Y');
 foreach ($arResult['SECTIONS'] as &$arSection) {
 	$arFilter['SECTION_ID'] = $arSection['ID'];

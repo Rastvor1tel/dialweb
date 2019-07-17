@@ -9,6 +9,7 @@ $APPLICATION->IncludeComponent("bitrix:catalog.section.list", "cases", array(
 	"COUNT_ELEMENTS" => "Y",
 	"TOP_DEPTH" => "2",
 	"ACTIVE_CODE" => $arResult['VARIABLES']['SECTION_CODE']?$arResult['VARIABLES']['SECTION_CODE']:"development",
+    "SECTION_USER_FIELDS" => array('UF_EN_NAME'),
 ));
 $APPLICATION->IncludeComponent("bitrix:news.list", "development", array(
 	"IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],

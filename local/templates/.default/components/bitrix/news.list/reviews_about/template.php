@@ -1,14 +1,15 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 $this->setFrameMode(true);
+use Bitrix\Main\Localization\Loc;
 ?>
 <div class="about__thanks">
 	<div class="about__thanks-left">
 		<div class="about__title">
-			<div class="about__title-name">Нас благодарят</div>
-			<div class="about__title-info">О качестве нашей работы говорят отзывы наших клиентов</div>
+			<div class="about__title-name"><?= Loc::getMessage("TITLE_NAME") ?></div>
+			<div class="about__title-info"><?= Loc::getMessage("TITLE_INFO") ?></div>
 		</div>
 		<a class="about__thanks-button button button_grey button_arrow" href="/about/reviews/">
-			<div class="button__arrow-text">Читать все благодарности</div>
+			<div class="button__arrow-text"><?= Loc::getMessage("ARROW_TEXT") ?></div>
 			<div class="button__arrow"></div>
 		</a>
 	</div>
@@ -24,20 +25,55 @@ $this->setFrameMode(true);
 							<img src="<?=$arItem['PREVIEW_PICTURE']['SRC']?>" alt="<?=$arItem['PREVIEW_PICTURE']['ALT']?>" title="<?=$arItem['PREVIEW_PICTURE']['TITLE']?>">
 						</div>
 						<?if (!empty($arItem['PROPERTIES']['VIDEO']['VALUE'])):?>
-							<a class="review__link _video" href="<?=$arItem['PROPERTIES']['VIDEO']['VALUE']?>" data-fancybox="review<?=$arItem['ID']?>">Смотреть видео</a>
+							<a class="review__link _video" href="<?=$arItem['PROPERTIES']['VIDEO']['VALUE']?>" data-fancybox="review<?=$arItem['ID']?>"><?= Loc::getMessage("WATCH_VIDEO") ?></a>
 						<?endif?>
 						<?if (!empty($arItem['DISPLAY_PROPERTIES']['REVIEW']['FILE_VALUE']['SRC'])):?>
-							<a class="review__link" href="<?=$arItem['DISPLAY_PROPERTIES']['REVIEW']['FILE_VALUE']['SRC']?>" data-fancybox="review<?=$arItem['ID']?>">Читать благодарственное письмо</a>
+							<a class="review__link" href="<?=$arItem['DISPLAY_PROPERTIES']['REVIEW']['FILE_VALUE']['SRC']?>" data-fancybox="review<?=$arItem['ID']?>"><?= Loc::getMessage("READ_LETTER") ?></a>
 						<?endif?>
 					</div>
 					<div class="review__right">
-						<div class="review__name"><?=$arItem["NAME"]?></div>
-						<div class="review__author"><?=$arItem["PROPERTIES"]["AUTHOR"]["VALUE"]?></div>
-						<div class="review__post"><?=$arItem["PROPERTIES"]["POSITION"]["VALUE"]?></div>
-						<div class="review__text"><?=$arItem["PREVIEW_TEXT"]?></div>
+						<div class="review__name">
+                            <?
+                            if (LANGUAGE_ID == 'ru') {
+                                echo $arItem['NAME'];
+                            } else {
+                                echo $arItem['PROPERTIES'][strtoupper(LANGUAGE_ID).'_NAME']['VALUE'];
+                            }
+                            ?>
+                        </div>
+						<div class="review__author">
+                            <?
+                            if (LANGUAGE_ID == 'ru') {
+                                echo $arItem["PROPERTIES"]["AUTHOR"]["VALUE"];
+                            } else {
+                                echo $arItem['PROPERTIES'][strtoupper(LANGUAGE_ID).'_AUTHOR']['VALUE'];
+                            }
+                            ?>
+                        </div>
+						<div class="review__post">
+                            <?
+                            if (LANGUAGE_ID == 'ru') {
+                                echo $arItem["PROPERTIES"]["POSITION"]["VALUE"];
+                            } else {
+                                echo $arItem['PROPERTIES'][strtoupper(LANGUAGE_ID).'_POSITION']['VALUE'];
+                            }
+                            ?>
+                        </div>
+						<div class="review__text">
+                            <?
+                            if (LANGUAGE_ID == 'ru') {
+                                echo  $arItem['PREVIEW_TEXT'];
+                            } else {
+                                echo $arItem['PROPERTIES'][strtoupper(LANGUAGE_ID).'_INTROTEXT']['~VALUE']['TEXT'];
+                            }
+                            ?>
+                        </div>
 					</div>
 				</div>
 			</div>
 		<?endforeach?>
 	</div>
 </div>
+<?
+//p($arResult['ITEMS']);
+?>
