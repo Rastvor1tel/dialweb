@@ -8,6 +8,9 @@ $this->setFrameMode(true);
         if (LANGUAGE_ID != 'ru' && $arItem['PROPERTIES'][strtoupper(LANGUAGE_ID).'_NAME']['VALUE'] =='') {
             continue;
         }
+        if($arItem['PROPERTIES']['HIDE_ON_MAIN_LIST']['VALUE']){
+            continue;
+        }
 		?>
 		<li class="services__item" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
 			<a class="services-item" href="<?=$arItem["DETAIL_PAGE_URL"]?>">

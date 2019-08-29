@@ -21,6 +21,7 @@ Loc::loadMessages(__FILE__);
 					<a href="tel:+79534256999" itemprop="telephone">+7 (953) 425-69-99</a>
 				</p>
 				<p><b><?=Loc::getMessage("PAGE_CONTACTS_OUR_EMAIL");?></b><br><a href="mailto:manager@dialweb.ru" itemprop="email">manager@dialweb.ru</a></p>
+				<p><b><?=Loc::getMessage("QUALITY_CONTROL_SYSTEM");?></b><br><a href="tel:+78002001525">8 800 200 15 25 </a></p>
 				<p itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
 					<b><?=Loc::getMessage("PAGE_CONTACTS_ADDRESS_TITLE_TULA");?></b>
 					<br>
@@ -34,6 +35,7 @@ Loc::loadMessages(__FILE__);
 			<div class="contacts-page__block _moscow js-contacts-tab<?if($city=='Moscow'){?> _active<?}?>">
 				<p><b><?=Loc::getMessage("PAGE_CONTACTS_PHONE_TITLE_MOSCOW");?></b><br><a href="tel:+74952666287" class="roistat-phone-495">+7 (495) 266-62-87</a><br><a href="tel:+79035385939">+7 (903) 538-59-39</a></p>
 				<p><b><?=Loc::getMessage("PAGE_CONTACTS_OUR_EMAIL");?></b><br><a href="mailto:salemsk@dialweb.ru">salemsk@dialweb.ru</a></p>
+                <p><b><?=Loc::getMessage("QUALITY_CONTROL_SYSTEM");?></b><br><a href="tel:+78002001525">8 800 200 15 25 </a></p>
 				<p>
                     <b><?=Loc::getMessage("PAGE_CONTACTS_ADDRESS_TITLE_MOSCOW");?></b><br>
                     <?=Loc::getMessage("CONTACTS_ADDRESS_MOSCOW_NOCITY");?>
@@ -42,6 +44,7 @@ Loc::loadMessages(__FILE__);
 			<div class="contacts-page__block js-contacts-tab<?if($city=='Kaluga'){?> _active<?}?>">
 				<p><b><?=Loc::getMessage("PAGE_CONTACTS_PHONE_TITLE_KALUGA");?></b><br><a href="tel:+74842202484" class="roistat-phone-4842">+7 (4842) 20-24-84</a><br><a href="tel:+79005752484">+7 (900) 575-24-84</a></p>
 				<p><b><?=Loc::getMessage("PAGE_CONTACTS_OUR_EMAIL");?></b><br><a href="mailto:mo@dialweb.ru">mo@dialweb.ru</a></p>
+                <p><b><?=Loc::getMessage("QUALITY_CONTROL_SYSTEM");?></b><br><a href="tel:+78002001525">8 800 200 15 25 </a></p>
 				<p>
                     <b><?=Loc::getMessage("PAGE_CONTACTS_ADDRESS_TITLE_KALUGA");?></b><br>
                     <?=Loc::getMessage("CONTACTS_ADDRESS_KALUGA_NOCITY");?>

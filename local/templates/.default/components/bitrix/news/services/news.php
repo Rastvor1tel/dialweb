@@ -10,7 +10,8 @@ $this->setFrameMode(true);
 		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
         "PROPERTY_CODE" => array(
             0 => "EN_NAME",
-            1 => "EN_INTROTEXT"
+            1 => "EN_INTROTEXT",
+            2 => "HIDE_ON_MAIN_LIST"
         )
 	));?>
 </div>

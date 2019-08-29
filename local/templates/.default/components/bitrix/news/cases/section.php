@@ -5,7 +5,7 @@ if ($arResult['VARIABLES']['SECTION_CODE'] == 'development') {
 	LocalRedirect($arParams['SEF_FOLDER']);
 }
 
-$developmentSection = Array('development', 'customized', 'ready-solution');
+$developmentSection = Array('development', 'customized', 'ready-solution','Landing-page');
 if(in_array($arResult['VARIABLES']['SECTION_CODE'], $developmentSection)) {
 	include('development.php');
 } else {

@@ -20,7 +20,15 @@ if (isset($_GET['SHOW_MORE'])) {
 			<?=$arItem['PROPERTIES']['ATTRIBUTES']['VALUE']?>
 		>
 			<div class="arrow-block__date"><?=$arItem["DISPLAY_ACTIVE_FROM"]?></div>
-			<div class="arrow-block__name"><?=$arItem["NAME"]?></div>
+			<div class="arrow-block__name">
+                <?
+                if (LANGUAGE_ID == 'ru') {
+                    echo $arItem["NAME"];
+                } else {
+                    echo $arItem['PROPERTIES'][strtoupper(LANGUAGE_ID).'_NAME']['VALUE'];
+                }
+                ?>
+            </div>
 			<div class="arrow-block__arrow"></div>
 		</a>
 	<?endforeach?>

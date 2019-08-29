@@ -1,5 +1,6 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 $this->setFrameMode(true);
+use Bitrix\Main\Localization\Loc;
 if (isset($_GET['SHOW_MORE'])) {
 	$APPLICATION->RestartBuffer();
 	while (ob_get_level()) {
@@ -54,7 +55,15 @@ function renderItem($arItem, $type = null) {
 	?>
 	<a class="blog-section__item" href="<?=$arItem["DETAIL_PAGE_URL"]?>" <?=$bg?>>
 		<?if (!empty($arItem["PROPERTIES"]["TAGS"]["VALUE"])):?>
-			<div class="blog-section__type"><?=implode(', ', $arItem["PROPERTIES"]["TAGS"]["VALUE"])?></div>
+			<div class="blog-section__type">
+                <?
+                if (LANGUAGE_ID == 'ru') {
+                    echo implode(', ', $arItem["PROPERTIES"]["TAGS"]["VALUE"]);
+                } else {
+                    echo implode(', ', $arItem['PROPERTIES'][strtoupper(LANGUAGE_ID).'_TAGS']['VALUE']);
+                }
+                ?>
+            </div>
 		<?endif?>
 		<?if ($type == 'img'):?>
 			<div class="blog-section__image">
@@ -66,8 +75,24 @@ function renderItem($arItem, $type = null) {
 				<div class="blog-section__date"><?=$arItem["DISPLAY_ACTIVE_FROM"]?></div>
 				<div class="blog-section__views"><?=$arItem["SHOW_COUNTER"]?></div>
 			</div>
-			<div class="blog-section__title"><?=$arItem["NAME"]?></div>
-			<div class="blog-section__announcement"><?=$arItem["PREVIEW_TEXT"]?></div>
+			<div class="blog-section__title">
+                <?
+                if (LANGUAGE_ID == 'ru') {
+                    echo $arItem["NAME"];
+                } else {
+                    echo $arItem['PROPERTIES'][strtoupper(LANGUAGE_ID).'_NAME']['VALUE'];
+                }
+                ?>
+            </div>
+			<div class="blog-section__announcement">
+                <?
+                if (LANGUAGE_ID == 'ru') {
+                    echo $arItem["PREVIEW_TEXT"];
+                } else {
+                    echo $arItem['PROPERTIES'][strtoupper(LANGUAGE_ID).'_INTROTEXT']['VALUE']['TEXT'];
+                }
+                ?>
+            </div>
 		</div>
 	</a>
 	<?
@@ -76,3 +101,4 @@ function renderItem($arItem, $type = null) {
 if (isset($_GET['SHOW_MORE'])) {
 	die();
 }
+//p($arResult['ITEMS']);

@@ -3,8 +3,24 @@ $this->setFrameMode(true);
 $shareUrl = urlencode('https://' . $_SERVER['SERVER_NAME'] . $arResult["DETAIL_PAGE_URL"]);
 ?>
 <div class="blog-inner">
-	<div class="blog-inner__type"><?=implode(', ', $arResult["PROPERTIES"]["TAGS"]["VALUE"])?></div>
-	<h1 class="blog-inner__title"><?=$arResult["NAME"]?></h1>
+	<div class="blog-inner__type">
+        <?
+        if (LANGUAGE_ID == 'ru') {
+            echo implode(', ', $arResult["PROPERTIES"]["TAGS"]["VALUE"]);
+        } else {
+            echo implode(', ', $arResult['PROPERTIES'][strtoupper(LANGUAGE_ID).'_TAGS']['VALUE']);
+        }
+        ?>
+    </div>
+	<h1 class="blog-inner__title">
+        <?
+        if (LANGUAGE_ID == 'ru') {
+            echo $arResult["NAME"];
+        } else {
+            echo $arResult['PROPERTIES'][strtoupper(LANGUAGE_ID).'_NAME']['VALUE'];
+        }
+        ?>
+    </h1>
 	<div class="blog-inner__info">
 		<div class="blog-inner__head">
 			<div class="blog-inner__date"><?=$arResult["DISPLAY_ACTIVE_FROM"]?></div>
@@ -28,10 +44,24 @@ $shareUrl = urlencode('https://' . $_SERVER['SERVER_NAME'] . $arResult["DETAIL_P
 	</div>
 	<div class="blog-inner__wrap">
 		<div class="blog-inner__content">
-			<?=$arResult["DETAIL_TEXT"]?>
+            <?
+            if (LANGUAGE_ID == 'ru') {
+                echo $arResult["DETAIL_TEXT"];
+            } else {
+                echo $arResult['PROPERTIES'][strtoupper(LANGUAGE_ID).'_DETAILTEXT']['~VALUE']['TEXT'];
+            }
+            ?>
             <div class="blog-inner__info _bottom">
                 <div class="head-socials _blog">
-                    <div class="head-socials__text">Поделиться:</div>
+                    <div class="head-socials__text">
+                        <?
+                        if (LANGUAGE_ID == 'ru') {
+                            echo 'Поделиться:';
+                        } else {
+                            echo 'Share:';
+                        }
+                        ?>
+                    </div>
                     <div class="head-socials__wrap">
                         <a class="head-socials__item social-button" href="https://vk.com/share.php?url=<?=$shareUrl?>" target="_blank">
                             <svg class="social-button__icon">
@@ -74,9 +104,11 @@ $shareUrl = urlencode('https://' . $_SERVER['SERVER_NAME'] . $arResult["DETAIL_P
 				"SET_TITLE" => "N",
 				"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
 				"SORT_BY1" => "RAND",
+                "PROPERTY_CODE" => Array("EN_NAME")
 			));?>
 		</div>
 	</div>
-
-
 </div>
+<?
+//p($arResult);
+?>

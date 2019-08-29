@@ -27,7 +27,17 @@ Loc::loadMessages(__FILE__);
                     }
                 ?>
 				<?$APPLICATION->IncludeComponent('dial:city.show', '', ['FIELD' => 'PROPERTY_PHONE', 'CLASS' => 'header__phone-link '.$roistatPhoneClass]);?>
-				<button type="button" class="header__phone-link js-popup-button" data-popup="js-popup-callback"><?=Loc::getMessage("CALLBACK");?></button>
+                <?
+                if (LANGUAGE_ID == 'ru') {
+                    ?>
+                    <button type="button" class="header__phone-link js-popup-button" data-popup="js-popup-callback"><?=Loc::getMessage("CALLBACK");?></button>
+                    <?
+                } else {
+                    ?>
+                    <button type="button" class="header__phone-link b24-web-form-popup-btn-22"><?=Loc::getMessage("CALLBACK");?></button>
+                    <?
+                }
+                ?>
 			</div>
             <div class="header__city">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="20px" height="20px" viewBox="0 0 491.582 491.582">

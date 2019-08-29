@@ -10,46 +10,60 @@ if (LANGUAGE_ID == 'ru') {
         <div class="button__arrow-text">Узнать стоимость услуги</div>
         <div class="button__arrow"></div>
     </a>
-    <div class="info">
-        <div class="info__wrap-small">
-            <div class="info__head">
-                <div class="info__head-title">Полный спектр услуг</div>
-                <div class="info__head-text">Вам не понадобится докупать услуги, этого комплекса хватит для достижения
-                    высокоэффективных результатов
-                </div>
-            </div>
-            <div class="info__stat">
-                <div class="info__stat-title">
-                    <span><?= $arResult['PROPERTIES']['STAFF_COUNT']['VALUE'] ?></span>
-                    <?= Helpers::declOfNum($arResult['PROPERTIES']['STAFF_COUNT']['VALUE'], array('Человек', 'Человека', 'Человек')) ?>
-                </div>
-                <div class="info__stat-text">Будут работать над вашим проектом</div>
-            </div>
+    <?
+    if ($arResult['PROPERTIES']['FIRST_BLOCK']['~VALUE']['TEXT']) {
+        ?>
+        <div class="serviceDescription">
+            <?=$arResult['PROPERTIES']['FIRST_BLOCK']['~VALUE']['TEXT']?>
         </div>
-        <div class="info__wrap-big">
-            <div class="services _seo">
-                <ul class="services__list">
-                    <? foreach ($arResult['PROPERTIES']['SERVICES']['VALUE'] as $key => $value): ?>
-                        <li class="services__item">
-                            <div class="services-item">
-                                <div class="services-item__title">
-                                    <div class="services-item__name"><?= $arResult['PROPERTIES']['SERVICES']['DESCRIPTION'][$key] ?></div>
-                                    <div class="services-item__arrow"></div>
+        <?
+    }
+    if($arResult['PROPERTIES']['SHOW_FIRST_BLOCK']['VALUE']!='Да') {
+        ?>
+        <div class="info">
+            <div class="info__wrap-small">
+                <div class="info__head">
+                    <div class="info__head-title">Полный спектр услуг</div>
+                    <div class="info__head-text">Вам не понадобится докупать услуги, этого комплекса хватит для достижения
+                        высокоэффективных результатов
+                    </div>
+                </div>
+                <div class="info__stat">
+                    <div class="info__stat-title">
+                        <span><?= $arResult['PROPERTIES']['STAFF_COUNT']['VALUE'] ?></span>
+                        <?= Helpers::declOfNum($arResult['PROPERTIES']['STAFF_COUNT']['VALUE'], array('Человек', 'Человека', 'Человек')) ?>
+                    </div>
+                    <div class="info__stat-text">Будут работать над вашим проектом</div>
+                </div>
+            </div>
+            <div class="info__wrap-big">
+                <div class="services _seo">
+                    <ul class="services__list">
+                        <? foreach ($arResult['PROPERTIES']['SERVICES']['VALUE'] as $key => $value): ?>
+                            <li class="services__item">
+                                <div class="services-item">
+                                    <div class="services-item__title">
+                                        <div class="services-item__name"><?= $arResult['PROPERTIES']['SERVICES']['DESCRIPTION'][$key] ?></div>
+                                        <div class="services-item__arrow"></div>
+                                    </div>
+                                    <div class="services-item__info"><?= $value ?></div>
                                 </div>
-                                <div class="services-item__info"><?= $value ?></div>
-                            </div>
-                        </li>
-                    <? endforeach ?>
-                </ul>
+                            </li>
+                        <? endforeach ?>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
+        <?
+    }
+    ?>
+
     <?
     if (!empty($arResult['PROPERTIES']['TARIFF_SECTION']['VALUE'])): ?>
         <div class="tariff">
             <h2 class="tariff__title page-title" id="tariff"><?= $arResult['PROPERTIES']['TARIFF_TITLE']['VALUE'] ?></h2>
             <?
-            $APPLICATION->IncludeComponent("bitrix:news.list", "tariff", array(
+            $APPLICATION->IncludeComponent("bitrix:news.list", "tariff_new", array(
                 "IBLOCK_ID" => "7",
                 "PARENT_SECTION" => $arResult['PROPERTIES']['TARIFF_SECTION']['VALUE'],
                 "NEWS_COUNT" => "10",

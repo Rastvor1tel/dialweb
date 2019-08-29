@@ -59,6 +59,8 @@
   width: 25%;
   color: #000000;
   font-size: 18px;
+  font-weight: 300;
+  letter-spacing: .22px;
 }
 
 @media screen and (max-width: 768px) {
@@ -160,6 +162,9 @@
   width: 25%;
   color: #000000;
   font-size: 18px;
+
+  font-weight: 300;
+  letter-spacing: .22px;
 }
 
 @media screen and (max-width: 768px) {

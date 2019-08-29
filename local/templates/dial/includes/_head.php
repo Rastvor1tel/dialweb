@@ -4,6 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title><?$APPLICATION->ShowTitle()?> - Digital Agency Dial</title>
 <?
+$APPLICATION->SetAdditionalCSS('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900&display=swap&subset=cyrillic');
 $APPLICATION->SetAdditionalCSS(TEMPLATE_PATH . '/css/normalize.css');
 $APPLICATION->SetAdditionalCSS(TEMPLATE_PATH . '/css/common.css');
 $APPLICATION->SetAdditionalCSS(TEMPLATE_PATH . '/css/style.css');

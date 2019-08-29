@@ -1,10 +1,19 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 $this->setFrameMode(true);
+use Bitrix\Main\Localization\Loc;
 ?>
 <div class="subscribe__blog">
     <form action="<?=$arResult["FORM_ACTION"]?>" method="post" class="subscription _light">
         <?=bitrix_sessid_post()?>
-        <div class="subscribe__blog-text">Подпишитесь на ежемесячную рассылку от Dial и заряжайтесь интересными идеями!</div>
+        <div class="subscribe__blog-text">
+            <?
+            if (LANGUAGE_ID == 'ru') {
+                echo 'Подпишитесь на ежемесячную рассылку от Dial и заряжайтесь интересными идеями!';
+            } else {
+                echo 'Sign up for Dial monthly newsletter and recharge with interesting ideas!';
+            }
+            ?>
+        </div>
         <div class="subscribe__blog-wrap">
 
             <input type="hidden" name="sender_subscription" value="add">
@@ -16,7 +25,15 @@ $this->setFrameMode(true);
                     <input type="email" name="SENDER_SUBSCRIBE_EMAIL" class="input-label__input text-input _black">
                     <span class="input-label__placeholder js-placeholder _black">E-mail</span>
                 </label>
-                <button class="subscription__submit button button_oragne" type="submit" value="Подписаться">Подписаться</button>
+                <button class="subscription__submit button button_oragne" type="submit" value="Подписаться">
+                    <?
+                    if (LANGUAGE_ID == 'ru') {
+                        echo 'Подписаться';
+                    } else {
+                        echo 'Subscribe';
+                    }
+                    ?>
+                </button>
         
             <?endif?>
         </div>

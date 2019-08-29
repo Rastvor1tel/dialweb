@@ -51,6 +51,12 @@ Loc::loadMessages(__FILE__);
                                 </svg>
                                 <div class="banner__social-text">Viber</div>
                             </a>
+                            <a href="https://wa.me/79509200049" target="_blank" class="banner__social-item tablet-show">
+                                <svg class="banner__social-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-3.825 3.113-6.937 6.937-6.937 1.856.001 3.598.723 4.907 2.034 1.31 1.311 2.031 3.054 2.03 4.908-.001 3.825-3.113 6.938-6.937 6.938z"/>
+                                </svg>
+                                <span class="banner__social-text">WhatsApp</span>
+                            </a>
                             <a class="banner__social-item" href="https://vk.me/club41029771" target="_blank">
                                 <svg class="banner__social-icon">
                                     <use xlink:href="<?= TEMPLATE_PATH ?>/img/icons.svg#vk2"></use>
@@ -170,6 +176,83 @@ Loc::loadMessages(__FILE__);
             </div>
         </div>
     </section>
+    <?
+    if (LANGUAGE_ID == 'ru') {
+        ?>
+
+
+    <section class="b-day lattice-ie-fix" id="dial-bday">
+        <div class="container-outer">
+            <div class="b-day__wrap-outer angle angle_reverse angle-white" style="background-image: url('<?= TEMPLATE_PATH ?>/img/dial-bday1.png');">
+                <div class="container-inner">
+                    <div class="b-day__wrap-inner">
+                        <div class="b-day__head">
+                            <div class="b-day__title">В этом году нам исполняется <span>10 лет</span></div>
+                            <div class="b-day__subtitle">Получите полезный подарок для&nbsp;Вашего бизнеса в честь дня&nbsp;рождения Dial</div>
+                        </div>
+                        <div class="b-day__slider-wrap">
+                            <div class="b-day__contols contols">
+                                <button class="b-day__contols-item contols__item _left" type="button"></button>
+                                <button class="b-day__contols-item contols__item _right" type="button"></button>
+                            </div>
+                            <div class="b-day__slider">
+                                <div class="b-day__wrap">
+                                    <div class="b-day__gift gift">
+                                        <div class="gift__head">
+                                            <div class="gift__title">Чек-лист из 10 пунк&shy;тов «Как повысить продажи на своем сайте за 1 месяц»</div>
+                                            <div class="gift__description">*предоставляется всем, кто оставил контакт в лид-форме</div>
+                                        </div>
+                                        <button class="gift__button js-popup-button" type="button" data-popup="js-popup-gift" data-yandex-goal="checklist-kak-povysit-prodaji">Получить подарок</button>
+                                    </div>
+                                    <div class="b-day__gift gift">
+                                        <div class="gift__head">
+                                            <div class="gift__title">Скидка 10000 руб&shy;лей на первый месяц абонентского обслуживания</div>
+                                            <div class="gift__description">(*при заказе услуг Интернет-марке&shy;тинга на сумму от 50000 руб. )</div>
+                                        </div>
+                                        <button class="gift__button js-popup-button" type="button" data-popup="js-popup-gift" data-yandex-goal="skidka-perviy-mesiac-abonentskogo-obsluj">Получить подарок</button>
+                                    </div>
+                                    <div class="b-day__gift gift">
+                                        <div class="gift__head">
+                                            <div class="gift__title">Продающая Promo-страница в подарок (создание+дизайн)</div>
+                                            <div class="gift__description">(*при заказе любых услуг Dial на сумму от 200000 руб. )</div>
+                                        </div>
+                                        <button class="gift__button js-popup-button" type="button" data-popup="js-popup-gift" data-yandex-goal="prodaushaya-stranica-v-podarok">Получить подарок</button>
+                                    </div>
+                                    <div class="b-day__gift gift">
+                                        <div class="gift__head">
+                                            <div class="gift__title">10 часов работ технического отдела в подарок</div>
+                                            <div class="gift__description">(*при заказе разработки сайта на сумму от 70000 руб.)</div>
+                                        </div>
+                                        <button class="gift__button js-popup-button" type="button" data-popup="js-popup-gift" data-yandex-goal="raboty-technicheskogo-otdela-v-podarok">Получить подарок</button>
+                                    </div>
+                                    <div class="b-day__gift gift">
+                                        <div class="gift__head">
+                                            <div class="gift__title">10 часов работ отдела Интернет-маркетинга (SEO или Контекстная реклама)</div>
+                                            <div class="gift__description">(*при заказе услуг Интернет-марке&shy;тинга на сумму от 70000 руб.)</div>
+                                        </div>
+                                        <button class="gift__button js-popup-button" type="button" data-popup="js-popup-gift" data-yandex-goal="raboty-internet-marketinga-v-podarok">Получить подарок</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lattice">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </section>
+        <?
+    }
+    ?>
     <div class="contextual lattice-ie-fix">
         <div class="container-outer">
             <div class="contextual__wrap-outer">
@@ -429,8 +512,8 @@ Loc::loadMessages(__FILE__);
                                     <div class="contacts__block-item">
                                         <div class="contacts__block-name"><?=Loc::getMessage("CONTACTS_PHONE");?></div>
                                         <?$APPLICATION->IncludeComponent(
-	"dial:city.show", 
-	".default", 
+	"dial:city.show",
+	".default",
 	array(
 		"FIELD" => "PROPERTY_PHONE",
 		"CITY_CODE" => "RU-KLU",

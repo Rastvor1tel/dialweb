@@ -12,6 +12,7 @@ $MESS['SIDEBAR_SOCIAL_CALLBACK']='Call back';
 $MESS['SIDEBAR_SOCIAL_VK']='Chat VK';
 $MESS['SIDEBAR_SOCIAL_CHAT']='Online chat';
 $MESS['SIDEBAR_SOCIAL_CABINET']='Personal account';
+$MESS['SIDEBAR_SOCIAL_WAZZUP']='WhatsApp';
 $MESS['SIDEBAR_UP']='Return to top';
 $MESS['NAVIGATION_PRESENTATION']='Presentation';
 $MESS['INDEX_PAGE']='Home';
@@ -102,6 +103,7 @@ $MESS['PAGE_CONTACTS_ADDRESS_TITLE_KALUGA']='Address in Kaluga:';
 
 $MESS['PAGE_ABOT_META_PAGETITLE']='About us';
 
+$MESS['QUALITY_CONTROL_SYSTEM'] = 'Quality Control System';
 
 $MESS['PAGE_FEEDBACK_BOTTOM_TITLE']='Let’s discuss your task';
 $MESS['PAGE_FEEDBACK_BOTTOM_SUBTITLE']='Our specialist will call you back and suggest the solutions, moreover answer your questions';

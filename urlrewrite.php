@@ -8,7 +8,7 @@ $arUrlRewrite=array (
     'PATH' => '/about/team/index.php',
     'SORT' => 100,
   ),
-  30 => 
+  32 => 
   array (
     'CONDITION' => '#^/portfolio/#',
     'RULE' => '',
@@ -16,7 +16,7 @@ $arUrlRewrite=array (
     'PATH' => '/portfolio/index.php',
     'SORT' => 100,
   ),
-  31 => 
+  33 => 
   array (
     'CONDITION' => '#^/services/#',
     'RULE' => '',

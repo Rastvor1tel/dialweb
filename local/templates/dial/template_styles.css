@@ -298,3 +298,13 @@
 		margin-bottom: 30px;
 	}
 }
+
+.serviceDescription {
+	letter-spacing: 0.22px;
+}
+.serviceDescription p {
+	font-weight: 300;
+}
+.serviceDescription b {
+	font-weight: bold;
+}

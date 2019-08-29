@@ -1,5 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetPageProperty("title", "Кейсы: продвижение новостных порталов");
 use Bitrix\Main\Localization\Loc;
 Loc::loadMessages(__FILE__);
 $APPLICATION->SetTitle(Loc::getMessage('PAGE_CASES_META_PAGETITLE'));

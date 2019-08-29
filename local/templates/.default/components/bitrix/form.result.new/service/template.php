@@ -47,6 +47,7 @@ if (LANGUAGE_ID == 'ru') {
             $(this).html('<input type="hidden" name="form_url_'+$(this).data('id')+'" value="' + location.href + '">');
         });
         $('input[name="form_text_10"]').inputmask({mask: "+7 (999) 999-99-99", showMaskOnHover: false});
+        $('input[name="form_text_59"]').inputmask({mask: "+7 (999) 999-99-99", showMaskOnHover: false});
     </script>
 
     <?

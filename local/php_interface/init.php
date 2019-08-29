@@ -52,3 +52,21 @@ function emailIpDivider($WEB_FORM_ID, $RESULT_ID) {
             break;
     }
 }
+
+
+if(!$_COOKIE["BITRIX_SM_visitor"])
+{
+global $APPLICATION;
+$APPLICATION->set_cookie("visitor", 'tr');
+$line = date('Y-m-d H:i:s')." - $_SERVER[REMOTE_ADDR]";
+file_put_contents($_SERVER['DOCUMENT_ROOT'].'/visitors.log', $line.PHP_EOL, FILE_APPEND);
+}
+
+function p($smth) {
+    global $USER;
+    if ($USER->IsAdmin()) {
+        echo '<pre>';
+        print_r($smth);
+        echo '</pre>';
+    }
+}

@@ -2,7 +2,7 @@
 $MESS["DEF_TEMPLATE_NF"]="Шаблон не найден. Установите шаблон для данного сайта.";
 $MESS["DEF_TEMPLATE_NF_SET"]="Установить шаблон";
 $MESS["INDEX_PAGETITLE"]="Создание сайтов в Туле, продвижение, аналитика сайта";
-$MESS["INDEX_DESCRIPTION"]="Digital Agency Dial - создание современных сайтов для продвижения и раскрутки Вашего бизнеса в интернете! Поддержка и поисковое продвижение в Яндексе и Google. Портфолио работ, цены на услуги.а";
+$MESS["INDEX_DESCRIPTION"]="Digital Agency Dial - создание современных сайтов для продвижения и раскрутки Вашего бизнеса в интернете! Поддержка и поисковое продвижение в Яндексе и Google. Портфолио работ, цены на услуги";
 $MESS['CALLBACK']='Заказать звонок';
 $MESS['POPUP_SERVICE']='Заказать услугу';
 $MESS['POPUP_STRATEGY_TITLE']='Заказать план';
@@ -12,6 +12,7 @@ $MESS['SIDEBAR_SOCIAL_CALLBACK']='Обратный звонок';
 $MESS['SIDEBAR_SOCIAL_VK']='Чат ВКонтакте';
 $MESS['SIDEBAR_SOCIAL_CHAT']='Онлайн-чат';
 $MESS['SIDEBAR_SOCIAL_CABINET']='Личный кабинет';
+$MESS['SIDEBAR_SOCIAL_WAZZUP']='WhatsApp';
 $MESS['SIDEBAR_UP']='Наверх';
 $MESS['NAVIGATION_PRESENTATION']='Презентация';
 $MESS['INDEX_PAGE']='Главная';
@@ -89,7 +90,7 @@ $MESS['PAGE_CASES_META_PAGETITLE']='Примеры наших работ';
 $MESS['PAGE_CASES_BOTTOM_FEEDBACK_SUBTITLE']='Отправьте нам заявку';
 $MESS['PAGE_CASES_BOTTOM_FEEDBACK_TITLE']='Хотите продвинуть свой сайт?';
 
-
+$MESS['QUALITY_CONTROL_SYSTEM'] = 'Система контроля качества';
 
 $MESS['PAGE_CONTACTS_META_PAGETITLE']='Контакты';
 $MESS['PAGE_CONTACTS_META_SUBTITLE']='Добро пожаловать в компанию Dial!';

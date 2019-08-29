@@ -158,6 +158,14 @@ $(function(){
 			$('.seo__contols-item._left').attr('disabled', true);
 		}
 	});
+	/* -------------------------Gifts-slider------------------------- */
+	$(function(){
+		$('.b-day__slider').arrowSlider({
+			'sliderWrapClass': '.b-day__wrap',
+			'sliderItemClass': '.b-day__gift',
+			'sliderArrowClass': '.b-day__contols-item',
+		});
+	});
 	/* -------------------------Placeholder------------------------- */
 
 	$(document).on("change", ".text-input", function() {
@@ -205,7 +213,7 @@ $(function(){
 
 	/* -------------------------Popups------------------------- */
 
-	$('.js-popup-button, .contacts__menu-link, .blog_popup, .zakaz, .order__strategy-plane').click(function(){
+	$('body').on('click', '.js-popup-button, .contacts__menu-link, .blog_popup, .zakaz, .order__strategy-plane', function () {
 		var popupData = $(this).data('popup');
 		$('.' + popupData).fadeIn();
 		$('.overlay').fadeIn().css('z-index', 20);
@@ -214,7 +222,7 @@ $(function(){
 		if (iframe.length && iframe.attr('src') == undefined) {
 			iframe.attr('src', iframe.data('src'));
 		}
-	});
+	})
 
 	$('.popup__close, .overlay').click(function(){
 		$('.popup').fadeOut();
@@ -243,13 +251,13 @@ $(function(){
 	if($_GET['show-form'] == 'true'){
 		$('.js-popup-service').fadeIn();
 		$('.overlay').fadeIn().css('z-index', 20);
-		$('body').addClass('_overflow');		
+		$('body').addClass('_overflow');
 	}
-	
+
 
 	//начало что бы при выборе москвы в шапке в футере был выбор москва
 	var msc_loc = $(".city-select__item.active a div").text();
-		
+
 	if (msc_loc == "Москва")  {
 		$('.contacts__city._active').removeClass('_active');
 		$('.contacts__city._moscow').addClass('_active');
@@ -267,10 +275,13 @@ $(function(){
 /* Yandex Metrika */
 $(function(){
 	var host = window.location.host;
+	var yaGoal;
 	//console.log(host);
 	if(host == 'dialweb.ru'){
 		//Dialweb.ru
-
+		$('body').on('click', '.gift__button', function () {
+			yaGoal = $(this).data('yandex-goal');
+		});
 		/* -------------------------Goals------------------------- */
 		$(document).on('submit', 'form', function(){
 			switch ($(this).attr('name')) {
@@ -286,6 +297,12 @@ $(function(){
 				case 'SIMPLE_FORM_4': // получить консультацию в услугах
 					yaCounter1199858.reachGoal('konsultant');
 					break;
+				case 'SIMPLE_FORM_8': //форма подарков на 10-летие компании на главной странице
+					if (yaGoal) {
+						yaCounter1199858.reachGoal(yaGoal);
+						console.log(yaGoal);
+					}
+					break;
 			}
 		});
 
@@ -294,7 +311,7 @@ $(function(){
 			ga('send', 'event', 'tel','clik1');
 			console.log("call1 ok");
 		});
-		
+
 		$('#call2 .header__phone-link').click(function(){
 			yaCounter1199858.reachGoal('call2');
 			ga('send', 'event', 'tel','clik2');
@@ -305,7 +322,7 @@ $(function(){
 			console.log("forma ok");
 		});
 	}else if(host == 'kaluga.dialweb.ru'){
-		
+
 		//Kaluga.dialweb.ru
 
 		/* -------------------------Goals------------------------- */
@@ -331,7 +348,7 @@ $(function(){
 			ga('send', 'event', 'tel','clik1');
 			console.log("call1 ok");
 		});
-		
+
 		$('#call2 .header__phone-link').click(function(){
 			yaCounter1199858.reachGoal('call2');
 			ga('send', 'event', 'tel','clik2');

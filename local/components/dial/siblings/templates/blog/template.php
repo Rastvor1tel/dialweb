@@ -14,7 +14,15 @@ $this->setFrameMode(true);
 					?>
 					<a href="<?=$arItem['DETAIL_PAGE_URL']?>" class="case-navigation__link _blog <?=$mod?>">
 						<div class="case-navigation__info">
-							<div class="case-navigation__name"><?=$arItem['NAME']?></div>
+							<div class="case-navigation__name">
+                                <?
+                                if (LANGUAGE_ID == 'ru') {
+                                    echo $arItem['NAME'];
+                                } else {
+                                    echo $arItem['PROPERTY_'.strtoupper(LANGUAGE_ID).'_NAME_VALUE'];
+                                }
+                                ?>
+                            </div>
 						</div>
 					</a>
 				<?endforeach?>
@@ -22,3 +30,6 @@ $this->setFrameMode(true);
 		</div>
 	</div>
 </div>
+<?
+//p($arResult['ITEMS']);
+?>

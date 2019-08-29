@@ -27,6 +27,7 @@ $this->setFrameMode(true);
 			"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
 			"SORT_BY1" => "ACTIVE_FROM",
 			"ACTIVE_DATE_FORMAT" => "d.m.Y",
+            "PROPERTY_CODE" => ["URL","ATRIBUTES"],
 		));
 		$APPLICATION->IncludeComponent("bitrix:sender.subscribe", "", array(
 			"SET_TITLE" => "N",

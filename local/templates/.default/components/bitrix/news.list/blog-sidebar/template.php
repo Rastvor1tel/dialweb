@@ -9,7 +9,18 @@ $this->setFrameMode(true);
 			<div class="blog-inner__post-image">
 				<img src="<?=$image['src']?>" alt="<?=$arItem["PREVIEW_PICTURE"]["ALT"]?>" title="<?=$arItem["PREVIEW_PICTURE"]["TITLE"]?>">
 			</div>
-			<div class="blog-inner__post-name"><?=$arItem["NAME"]?></div>
+			<div class="blog-inner__post-name">
+                <?
+                if (LANGUAGE_ID == 'ru') {
+                    echo $arItem["NAME"];
+                } else {
+                    echo $arItem['PROPERTIES'][strtoupper(LANGUAGE_ID).'_NAME']['VALUE'];
+                }
+                ?>
+            </div>
 		</a>
 	<?endforeach?>
 </div>
+<?
+//p($arResult);
+?>

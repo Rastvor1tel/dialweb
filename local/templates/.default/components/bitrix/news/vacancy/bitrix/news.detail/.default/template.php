@@ -27,7 +27,19 @@ use Bitrix\Main\Localization\Loc;
             }
             ?>
         </div>
-        <div class="vacancy-detail__button button button_oragne js-popup-button" data-popup="js-popup-vacancy"><?= Loc::getMessage("SEND_RESUME") ?></div>
+        <?
+        if (LANGUAGE_ID == 'ru') {
+            ?>
+            <div class="vacancy-detail__button button button_oragne js-popup-button" data-popup="js-popup-vacancy"><?= Loc::getMessage("SEND_RESUME") ?></div>
+            <?
+        } else {
+            ?>
+            <div class="vacancy-detail__button button button_oragne b24-web-form-popup-btn-23"><?= Loc::getMessage("SEND_RESUME") ?></div>
+            <?
+        }
+        ?>
+
+
         <div class="vacancy-detail__text"><?= Loc::getMessage("BUSYNESS") ?></div>
     </div>
     <?

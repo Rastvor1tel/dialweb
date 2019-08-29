@@ -26,7 +26,6 @@ Asset::getInstance()->addCss("/local/templates/.default/components/bitrix/news.l
     </div>
 </div>
 */?>
-<div class="page-title page-title_seo">В чем разница между плохим и хорошим продакшном</div>
 <div class="info">
 <div class="info__wrap-small">
 <div class="info__head">
@@ -116,24 +115,24 @@ Asset::getInstance()->addCss("/local/templates/.default/components/bitrix/news.l
         <div class="symbol">
             <div class="symbol__list">
                 <div class="symbol__item symbol__item_plus">
-                    Сложные проекты с нестандартными требованиями.
+                    Сложные проекты с нестандартными требованиями
                 </div>
                 <div class="symbol__item symbol__item_plus">
-                    Если необходимо, будем вносить правки по ночам.
+                    Если необходимо, будем вносить правки по ночам
                 </div>
                 <div class="symbol__item symbol__item_plus">
-                    Решаем конкретные маркетинговые и коммуникационные задачи.
+                    Решаем конкретные маркетинговые и коммуникационные задачи
                 </div>
             </div>
             <div class="symbol__list">
                 <div class="symbol__item symbol__item_minus">
-                    Свадебные съемки.
+                    Свадебные съемки
                 </div>
                 <div class="symbol__item symbol__item_minus">
-                    Проекты с неадекватными требованиями.
+                    Проекты с неадекватными требованиями
                 </div>
                 <div class="symbol__item symbol__item_minus">
-                    Все, что противоречит закону.
+                    Все, что противоречит закону
                 </div>
             </div>
         </div>
