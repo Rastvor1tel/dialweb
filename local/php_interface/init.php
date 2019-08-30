@@ -21,31 +21,40 @@ class Helpers {
 function emailIpDivider($WEB_FORM_ID, $RESULT_ID) {
     CBitrixComponent::includeComponentClass('dial:city');
     $cityId = GeoCity::getCityCurrent();
+    /*
+     * Костыль для отправки почты на разные почты (Москва/Тула).
+     * Закомментированы московские шаблоны.
+     * TODO: Чтобы заявки приходили в разные офисы нужно раскомментировать московские шаблоны и убрать тульские в ветке $cityId == 'RU-MOW' || $cityId == 'RU-MOS'
+     */
     switch ($WEB_FORM_ID) {
         case 1:
             if ($cityId == 'RU-MOW' || $cityId == 'RU-MOS')
-                $mailTemplateID = 177;
+                //$mailTemplateID = 177;
+                $mailTemplateID = 84;
             elseif ($cityId == 'RU-TUL')
                 $mailTemplateID = 84;
             CFormResult::Mail($RESULT_ID, intval($mailTemplateID));
             break;
         case 2:
             if ($cityId == 'RU-MOW' || $cityId == 'RU-MOS')
-                $mailTemplateID = 176;
+                //$mailTemplateID = 176;
+                $mailTemplateID = 85;
             elseif ($cityId == 'RU-TUL')
                 $mailTemplateID = 85;
             CFormResult::Mail($RESULT_ID, intval($mailTemplateID));
             break;
         case 3:
             if ($cityId == 'RU-MOW' || $cityId == 'RU-MOS')
-                $mailTemplateID = 175;
+                //$mailTemplateID = 175;
+                $mailTemplateID = 86;
             elseif ($cityId == 'RU-TUL')
                 $mailTemplateID = 86;
             CFormResult::Mail($RESULT_ID, intval($mailTemplateID));
             break;
         case 4:
             if ($cityId == 'RU-MOW' || $cityId == 'RU-MOS')
-                $mailTemplateID = 174;
+                //$mailTemplateID = 174;
+                $mailTemplateID = 87;
             elseif ($cityId == 'RU-TUL')
                 $mailTemplateID = 87;
             CFormResult::Mail($RESULT_ID, intval($mailTemplateID));
