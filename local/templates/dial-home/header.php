@@ -179,6 +179,85 @@ Loc::loadMessages(__FILE__);
     <?
     if (LANGUAGE_ID == 'ru') {
         ?>
+        <section class="guarantee lattice-ie-fix">
+            <div class="container-outer">
+                <div class="guarantee-outer__wrap">
+                    <div class="container-inner">
+                        <div class="guarantee__title title angle">финансовые гарантии</div>
+                        <div class="slogan guarantee__slogan"></div>
+                    </div>
+                        <div class="guarantee-wrap">
+                            <div class="guarantee-info">
+                                <div class="guarantee-info__list">
+                                    <div class="guarantee-info-item">
+                                        <picture class="guarantee-info-item__image">
+                                            <img src="/local/templates/dial/template/img/keys.png" alt="">
+                                        </picture>
+                                        <div class="guarantee-info-item__title">
+                                            Защита от попадания
+                                            под фильтр
+                                        </div>
+                                        <div class="guarantee-info-item__description">
+                                            Стоимость услуг – 0 руб./мес,
+                                            если сайт попал под фильтр
+                                        </div>
+                                    </div>
+                                    <div class="guarantee-info-item">
+                                        <picture class="guarantee-info-item__image">
+                                            <img src="/local/templates/dial/template/img/mizinec.png" alt="">
+                                        </picture>
+                                        <div class="guarantee-info-item__title">
+                                            Фиксированный
+                                            бюджет
+                                        </div>
+                                        <div class="guarantee-info-item__description">
+                                            Вы платите только за трафик по
+                                            договору, даже если по факту
+                                            посетителей будет больше
+                                        </div>
+                                    </div>
+                                    <div class="guarantee-info__bottom">
+                                        *Гарантии по SEO-продвижению
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="guarantee-target">
+                                <div class="guarantee-target__title">
+                                    Одна работа по вашему сайту в
+                                    подарок в случае, если результат не
+                                    устроит
+                                </div>
+                                <div class="guarantee-target__description">
+                                    Если KPI по той или иной услуге вас не устроит, вы можете выбрать одну услугу
+                                    Dial в подарок из списка:
+                                </div>
+                                <ul class="guarantee-target__list">
+                                    <li>Запуск 1-ой email-рассылки</li>
+                                    <li>Настройка 1-ой рекламной кампании</li>
+                                    <li>3 часа работ техподдержки</li>
+                                    <li>Создание адаптивной версии сайта</li>
+                                    <li>Маркетинговый аудит сайта</li>
+                                    <li>Технический аудит сайта</li>
+                                </ul>
+                                <div class="guarantee-target__bottom">
+                                    Одна из данных работ будет выполнена бесплатно
+                                </div>
+                            </div>
+                        </div>
+                    <div class="lattice">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
 
 
     <section class="b-day lattice-ie-fix" id="dial-bday">
@@ -426,6 +505,12 @@ Loc::loadMessages(__FILE__);
         </div>
     </div>
     <?
+    if (LANGUAGE_ID != 'ru') {
+        global $blogFilter;
+        $blogFilter = array(
+            "!PROPERTY_".strtoupper(LANGUAGE_ID)."_NAME"=> false
+        );
+    }
     $APPLICATION->IncludeComponent(
         "bitrix:news.list",
         "blog_home",
@@ -439,7 +524,8 @@ Loc::loadMessages(__FILE__);
             "PROPERTY_CODE" => array(
                 "EN_NAME",
                 "EN_INTROTEXT",
-            )
+            ),
+            "FILTER_NAME" => "blogFilter",
         )
     );
     ?>

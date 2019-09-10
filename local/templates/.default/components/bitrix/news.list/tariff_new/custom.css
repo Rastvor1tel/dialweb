@@ -1,0 +1,159 @@
+@font-face {
+    font-family: 'Source Sans Pro Black';
+    src: url('font/source-sans-pro-black.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+.tariff__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    max-width: 100%;
+    justify-content: space-between;
+}
+.tariff__item {
+    display: flex;
+    flex-direction: column;
+    width: calc(100%/3 - 13px)!important;
+    margin-top: 24px;
+    padding: 45px 31px 55px 55px;
+}
+.tariff__info {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding-top: 0;
+    justify-content: space-between;
+}
+
+.tariff__bottom {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 35px;
+}
+.tariff__name {
+    font-family: 'Source Sans Pro Black';
+    font-size: 36px;
+}
+
+.tariff__desc {
+    font-size: 18px;
+    line-height: 30px;
+    margin-bottom: 0;
+}
+.tariff__price {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    margin-bottom: 38px;
+}
+.tariff__price-wrap {
+    align-items: flex-end;
+}
+.tariff__price-text {
+    padding-right: 8px;
+}
+.tariff__price-count {
+    font-family: 'Source Sans Pro Black';
+    font-size: 30px;
+}
+.tariff__order {
+    margin-top: 0;
+    z-index: 1;
+    user-select: none;
+    width: 100%;
+    max-width: 173px;
+}
+.tariff__num {
+    font-family: 'Source Sans Pro Black';
+    font-size: 172px;
+    line-height: 125px;
+    color: #f4f6f7;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    user-select: none;
+}
+
+@media screen and (max-width: 1468px) {
+    .tariff__num {
+        font-size: 125px;
+        line-height: 95px;
+    }
+}
+@media screen and (max-width: 1366px) {
+    .tariff__item {
+        width: calc(100%/2 - 13px)!important;
+    }
+}
+@media screen and (max-width: 974px) {
+    .tariff__item {
+        padding: 45px 40px 45px 40px;
+    }
+    .tariff__desc {
+        font-size: 16px;
+    }
+    .tariff__name {
+        font-size: 27px;
+    }
+    .tariff__num {
+        font-size: 75px;
+        line-height: 55px;
+    }
+    .tariff__price-count {
+        font-size: 27px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .tariff__item {
+        padding: 30px 30px 45px 30px;
+    }
+    .tariff__num {
+        font-size: 65px;
+        line-height: 48px;
+    }
+    .tariff__desc {
+        font-size: 14px;
+    }
+    .tariff__price-count {
+        font-size: 25px;
+    }
+    .tariff__name {
+        font-size: 25px;
+    }
+    .tariff__order {
+        font-size: 13px;
+    }
+}
+@media screen and (max-width: 635px) {
+    .tariff__item {
+        width: calc(100% - 13px)!important;
+    }
+}
+@media screen and (max-width: 479px) {
+    .tariff__item {
+        padding: 20px 20px 30px 20px;
+        width: 320px;
+    }
+    .tariff__name {
+        font-size: 22px;
+    }
+    .tariff__price-text {
+        font-size: 18px;
+    }
+    .tariff__desc {
+        font-size: 12px;
+    }
+    .tariff__order {
+        margin-top: 15px;
+    }
+    .tariff__order {
+        font-size: 12px;
+    }
+    .tariff__num {
+        font-size: 45px;
+        line-height: 32px;
+    }
+}
