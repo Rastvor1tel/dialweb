@@ -1,7 +1,19 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 use Bitrix\Main\Localization\Loc;
 Loc::loadMessages(__FILE__);?>
-<img class="birthday10Bottom" src="/local/templates/dial/template/img/10year/10year-bottom.png" alt="">
+
+<?
+if (LANGUAGE_ID == 'ru') {
+    ?>
+    <img class="birthday10Bottom" src="/local/templates/dial/template/img/10year/10year-bottom.png" alt="">
+    <?
+} else {
+    ?>
+    <img class="birthday10Bottom" src="/local/templates/dial/template/img/10year/10year-bottom_en.png" alt="">
+    <?
+}
+?>
+
 <div class="container-inner">
 
 	<div class="footer__wrap-inner">

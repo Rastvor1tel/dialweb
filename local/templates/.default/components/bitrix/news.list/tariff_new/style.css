@@ -1,28 +1,29 @@
-.tariff__wrap .tariff__item {
-	border-color: transparent;
-}
-.tariff__wrap .tariff__item:hover {
-	border-color: #bbc4cd;
-}
-.tariff__wrap .tariff__item::before {
-	display: none;
-}
-.tariff__wrap .tariff__item:hover::before {
-	content: "";
-	display: block;
-	width: 0;
-	height: 0;
-	border: 15px solid transparent;
-	border-top-color: #fe9023;
-	border-left-color: #fe9023;
-	position: absolute;
-	left: -1px;
-	top: -1px;
-}
 .tariff__name {
 	color: black;
 	text-decoration: none;
 }
 a.tariff__name:hover {
 	text-decoration: underline;
+}
+
+.tariff-wrap4 .tariff__item {
+	width: 25%;
+}
+/*.tariff-wrap4 .tariff__name {
+	width: 100%;
+	padding-left: 0;
+}*/
+.tariff-wrap4 .tariff__info {
+	/*height: calc(100% - 112px);*/
+}
+@media screen and (max-width: 1580px) {
+	.tariff-wrap4 .tariff__item {
+		width: 33.3%;
+	}
+}
+@media screen and (max-width: 920px) {
+	.tariff-wrap4 .tariff__item {
+		width: 100%;
+		flex-direction: column;
+	}
 }

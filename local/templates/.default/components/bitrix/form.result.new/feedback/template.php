@@ -2,6 +2,7 @@
 <?
 if (LANGUAGE_ID == 'ru') {
     ?>
+    
     <div class="feedback__form feedback-form">
         <? if ($arResult["isFormErrors"] == "Y"): ?><?= $arResult["FORM_ERRORS_TEXT"]; ?><? endif ?>
         <? if (($_GET["WEB_FORM_ID"] == $arResult["arForm"]["ID"]) && ($_GET["formresult"] == "addok")): ?><p>Ваша

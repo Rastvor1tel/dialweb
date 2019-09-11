@@ -1,5 +1,12 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 $this->setFrameMode(true);
+
+if (LANGUAGE_ID != 'ru') {
+    global $arrFilter;
+    $arrFilter = array(
+        "!PROPERTY_".strtoupper(LANGUAGE_ID)."_NAME"=> false
+    );
+}
 ?>
 <h1 class="page-title"><?$APPLICATION->ShowTitle(false)?></h1>
 <div class="slogan angle"><?$APPLICATION->ShowProperty("subtitle")?></div>
@@ -15,6 +22,7 @@ $this->setFrameMode(true);
 			"PAGER_TEMPLATE" => "show_more",
 			"ACTIVE_DATE_FORMAT" => "d.m.Y",
 			"PROPERTY_CODE" => ["URL","ATRIBUTES"],
+            "FILTER_NAME" => "arrFilter",
 		));?>
 	</div>
 	<div class="news__sidebar">
@@ -28,6 +36,7 @@ $this->setFrameMode(true);
 			"SORT_BY1" => "ACTIVE_FROM",
 			"ACTIVE_DATE_FORMAT" => "d.m.Y",
             "PROPERTY_CODE" => ["URL","ATRIBUTES"],
+            "FILTER_NAME" => "arrFilter",
 		));
 		$APPLICATION->IncludeComponent("bitrix:sender.subscribe", "", array(
 			"SET_TITLE" => "N",

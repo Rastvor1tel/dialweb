@@ -229,11 +229,18 @@
 	height: 580px;
 }
 
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1480px) {
 	.contacts-page {
 		max-width: none;
 		height: auto;
 		margin-bottom: 30px;
+	}
+	.case-item__name {
+	    font-size: 24px;
+	}
+
+	.case-item__info {
+	    padding: 25px 30px 30px;
 	}
 }
 
@@ -301,9 +308,11 @@
 
 .serviceDescription {
 	letter-spacing: 0.22px;
+	padding-right: 119px;
 }
 .serviceDescription p {
 	font-weight: 300;
+	line-height: 30px;
 }
 .serviceDescription b {
 	font-weight: bold;

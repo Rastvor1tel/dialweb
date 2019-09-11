@@ -35,6 +35,8 @@ if (LANGUAGE_ID == 'ru') {
         <input type="hidden" name="<?=$fieldname?>" value="" data-roistat-field>
     <?elseif ($arQuestion['CAPTION'] == 'Домен'):?>
         <input type="hidden" name="<?=$fieldname?>" value="<?=$_SERVER['HTTP_HOST']?>">
+    <?elseif ($arQuestion['CAPTION'] == 'Подарок'):?>
+        <input type="hidden" name="<?=$fieldname?>" class="feedback-presents" value="">  
     <?elseif ($arQuestion['CAPTION'] == 'Город'):?>
         <input type="hidden" name="<?=$fieldname?>" value="<?=GeoCity::getCityName();?>">
     <?endif?>

@@ -237,7 +237,11 @@ $(function(){
 	});
 
 	$('.js-phone').inputmask({mask: "+7 (999) 999-99-99", showMaskOnHover: false });
+    $('.gift__button.js-popup-button').click(function(){
+		 var gift = $(this).closest('.b-day__gift.gift').find('.gift__title').text();
+       $('.feedback-presents').val(gift);
 
+ 	});
 });
 $(function(){
 	var $_GET = {};

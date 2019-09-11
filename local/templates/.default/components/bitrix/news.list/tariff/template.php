@@ -118,35 +118,36 @@ use Bitrix\Main\Localization\Loc;
                     ?>
                     <div class="tariff__item" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
                         <div class="tariff__number" data-number="0<?=$key+1?>"><?= Loc::getMessage("TARIFF_TEXT") ?></div>
+                        <?
+                        if ($arItem['PROPERTIES']['LINK']['VALUE']) {
+                            ?>
+                            <a href="<?=$arItem['PROPERTIES']['LINK']['VALUE'];?>" class="tariff__name">
+                                <?
+                                if (LANGUAGE_ID == 'ru') {
+                                    echo $arItem["NAME"];
+                                }else{
+                                    echo $arItem['PROPERTIES'][strtoupper(LANGUAGE_ID).'_NAME']['VALUE'];
+                                }
+                                ?>
+                            </a>
+                            <?
+                        } else {
+                            ?>
+                            <div class="tariff__name">
+                                <?
+                                if (LANGUAGE_ID == 'ru') {
+                                    echo $arItem["NAME"];
+                                }else{
+                                    echo $arItem['PROPERTIES'][strtoupper(LANGUAGE_ID).'_NAME']['VALUE'];
+                                }
+                                ?>
+                            </div>
+                            <?
+                        }
+                        ?>
                         <div class="tariff__info">
 
-                           <?
-                            if ($arItem['PROPERTIES']['LINK']['VALUE']) {
-                                ?>
-                                <a href="<?=$arItem['PROPERTIES']['LINK']['VALUE'];?>" class="tariff__name">
-                                    <?
-                                    if (LANGUAGE_ID == 'ru') {
-                                        echo $arItem["NAME"];
-                                    }else{
-                                        echo $arItem['PROPERTIES'][strtoupper(LANGUAGE_ID).'_NAME']['VALUE'];
-                                    }
-                                    ?>
-                                </a>
-                                <?
-                            } else {
-                                ?>
-                                <div class="tariff__name">
-                                    <?
-                                    if (LANGUAGE_ID == 'ru') {
-                                        echo $arItem["NAME"];
-                                    }else{
-                                        echo $arItem['PROPERTIES'][strtoupper(LANGUAGE_ID).'_NAME']['VALUE'];
-                                    }
-                                    ?>
-                                </div>
-                                <?
-                            }
-                            ?>
+
                             <div class="tariff__desc">
                                 <?
                                 if (LANGUAGE_ID == 'ru') {
